@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Exacta Experiences</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2B4B;--navy-light:#E8EDF5;--navy-mid:#3D5278;
+  --accent:#C9A84C;--accent-light:#FAF3E0;
+  --text:#1a1a2e;--muted:#6b7280;--border:#e5e7eb;
+  --bg:#ffffff;--bg2:#f9f9f7;
+}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:1.6;}
+h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;}
+.hidden{display:none!important;}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2.5rem;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--navy);cursor:pointer;letter-spacing:-0.3px;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-links a{font-size:14px;color:var(--muted);text-decoration:none;cursor:pointer;transition:color 0.2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{background:var(--navy);color:#fff;border:none;padding:9px 20px;border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s;}
+.nav-cta:hover{background:var(--navy-mid);}
+
+/* HERO */
+.hero{text-align:center;padding:5rem 2rem 4rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.hero-eyebrow{display:inline-block;background:var(--navy-light);color:var(--navy);font-size:12px;letter-spacing:0.8px;text-transform:uppercase;padding:5px 16px;border-radius:100px;margin-bottom:1.5rem;}
+.hero h1{font-size:52px;line-height:1.15;color:var(--navy);margin-bottom:1.25rem;max-width:600px;margin-left:auto;margin-right:auto;}
+.hero h1 em{color:var(--accent);font-style:italic;}
+.hero p{font-size:18px;color:var(--muted);max-width:480px;margin:0 auto 2rem;line-height:1.7;}
+.audience-pills{display:inline-flex;gap:0.75rem;background:var(--navy-light);border-radius:100px;padding:10px 22px;margin-bottom:2rem;font-size:13px;color:var(--navy);}
+.audience-pills span{display:flex;align-items:center;gap:5px;}
+.hero-types{display:flex;justify-content:center;gap:2rem;font-size:14px;color:var(--muted);margin-bottom:2.5rem;flex-wrap:wrap;}
+.hero-types span{display:flex;align-items:center;gap:6px;}
+.dot{width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;flex-shrink:0;}
+.hero-btn{background:var(--navy);color:#fff;border:none;padding:14px 32px;border-radius:6px;font-size:16px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s;}
+.hero-btn:hover{background:var(--navy-mid);}
+
+/* SECTIONS */
+.section{padding:3rem 2.5rem;}
+.section-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.5rem;}
+.section-header h2{font-size:28px;color:var(--navy);}
+.see-all{font-size:13px;color:var(--navy-mid);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+.section-sub{font-size:14px;color:var(--muted);margin-bottom:1.75rem;}
+.divider{border:none;border-top:1px solid var(--border);margin:0 2.5rem;}
+
+/* TRIP CARDS */
+.trips{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+@media(max-width:768px){.trips{grid-template-columns:1fr;}}
+.trip-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:box-shadow 0.2s,transform 0.2s;}
+.trip-card:hover{box-shadow:0 8px 24px rgba(27,43,75,0.12);transform:translateY(-2px);}
+.trip-img{width:100%;height:180px;object-fit:cover;display:block;background:var(--navy-light);}
+.trip-body{padding:1.25rem;}
+.badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:100px;margin-bottom:0.75rem;letter-spacing:0.3px;}
+.badge-navy{background:var(--navy-light);color:var(--navy);}
+.badge-gold{background:var(--accent-light);color:#7a5c0a;}
+.badge-green{background:#EAF3DE;color:#27500A;}
+.trip-title{font-family:'DM Serif Display',serif;font-size:17px;color:var(--navy);margin-bottom:4px;line-height:1.3;}
+.trip-pair{font-size:13px;color:var(--muted);margin-bottom:12px;}
+.trip-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:8px;}
+.trip-date{color:var(--muted);}
+.trip-price{font-weight:500;color:var(--navy);}
+.trip-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
+.spots{font-size:12px;color:#27500A;background:#EAF3DE;padding:3px 10px;border-radius:100px;}
+.value-tag{font-size:11px;color:#27500A;background:#EAF3DE;padding:3px 8px;border-radius:100px;}
+.view-btn{width:100%;margin-top:14px;background:var(--navy);color:#fff;border:none;padding:10px;border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s;}
+.view-btn:hover{background:var(--navy-mid);}
+
+/* WHY EXACTA */
+.why{padding:3rem 2.5rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.why h2{font-size:28px;color:var(--navy);margin-bottom:0.5rem;}
+.why p{font-size:15px;color:var(--muted);margin-bottom:2rem;max-width:520px;}
+.why-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+@media(max-width:768px){.why-cards{grid-template-columns:1fr;}}
+.why-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
+.why-icon{font-size:22px;margin-bottom:10px;}
+.why-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:6px;}
+.why-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* PICKUP */
+.pickup{padding:3rem 2.5rem;border-bottom:1px solid var(--border);}
+.pickup h2{font-size:28px;color:var(--navy);margin-bottom:1.25rem;}
+.pickup-grid{display:flex;gap:1.25rem;}
+@media(max-width:768px){.pickup-grid{flex-direction:column;}}
+.pickup-card{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem;}
+.pickup-name{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:4px;}
+.pickup-loc{font-size:13px;color:var(--muted);}
+
+/* POLL */
+.poll{padding:3rem 2.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.poll h2{font-size:28px;color:var(--navy);margin-bottom:0.5rem;}
+.poll p{font-size:14px;color:var(--muted);margin-bottom:1.5rem;}
+.poll-list{display:flex;flex-direction:column;gap:0.75rem;}
+.poll-opt{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);cursor:pointer;font-size:15px;transition:border-color 0.2s;}
+.poll-opt:hover{border-color:var(--navy);}
+.poll-vote{font-size:13px;color:var(--navy-mid);font-weight:500;}
+
+/* BANNERS */
+.private-banner{margin:2.5rem;border-radius:12px;background:var(--accent-light);border:1px solid var(--accent);padding:2.25rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;}
+@media(max-width:768px){.private-banner{flex-direction:column;}}
+.private-banner h3{font-family:'DM Serif Display',serif;font-size:22px;color:var(--navy);margin-bottom:6px;}
+.private-banner p{font-size:14px;color:var(--muted);max-width:400px;line-height:1.6;}
+.tag-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.75rem;}
+.tag{font-size:11px;padding:3px 10px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--navy);}
+.banner-btn{background:var(--navy);color:#fff;border:none;padding:11px 24px;border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background 0.2s;}
+.banner-btn:hover{background:var(--navy-mid);}
+.partner-banner{margin:0 2.5rem 2.5rem;border-radius:12px;background:var(--navy);padding:2.25rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;}
+@media(max-width:768px){.partner-banner{flex-direction:column;}}
+.partner-banner h3{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:6px;}
+.partner-banner p{font-size:14px;color:rgba(255,255,255,0.7);max-width:400px;}
+.partner-tag{background:rgba(255,255,255,0.15);color:#fff;font-size:11px;padding:3px 10px;border-radius:100px;}
+.partner-btn{background:var(--accent);color:var(--navy);border:none;padding:11px 24px;border-radius:6px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;flex-shrink:0;}
+
+/* FOOTER */
+footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;font-size:13px;color:var(--muted);}
+footer a{color:var(--navy-mid);text-decoration:none;}
+
+/* DETAIL PAGE */
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--navy-mid);cursor:pointer;padding:1.5rem 2.5rem 0;background:none;border:none;font-family:'DM Sans',sans-serif;transition:color 0.2s;}
+.back-btn:hover{color:var(--navy);}
+.detail-img{width:100%;height:320px;object-fit:cover;display:block;background:var(--navy-light);}
+.detail-body{padding:2rem 2.5rem;}
+.detail-title{font-size:32px;color:var(--navy);margin:0.75rem 0 0.25rem;}
+.detail-pair{font-size:15px;color:var(--accent);font-weight:500;margin-bottom:1.25rem;}
+.detail-desc{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:2rem;max-width:640px;}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;}
+@media(max-width:600px){.detail-grid{grid-template-columns:1fr;}}
+.detail-info{background:var(--bg2);border-radius:8px;padding:1rem;}
+.detail-info-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:4px;}
+.detail-info-val{font-size:15px;font-weight:500;color:var(--navy);}
+.itinerary-title{font-size:20px;color:var(--navy);margin-bottom:1rem;}
+.itinerary-step{display:flex;gap:1rem;margin-bottom:0.875rem;}
+.step-time{font-size:13px;color:var(--muted);min-width:65px;padding-top:2px;}
+.step-text{font-size:15px;color:var(--text);}
+.detail-reserve{background:var(--navy);color:#fff;border:none;width:100%;padding:14px;border-radius:6px;font-size:16px;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:2rem;max-width:400px;display:block;transition:background 0.2s;}
+.detail-reserve:hover{background:var(--navy-mid);}
+
+/* ABOUT PAGE */
+.about-hero{background:var(--navy);padding:5rem 2.5rem;text-align:center;}
+.about-hero h1{font-size:40px;color:#fff;margin-bottom:1rem;}
+.about-hero h1 em{color:var(--accent);font-style:italic;}
+.about-hero p{font-size:17px;color:rgba(255,255,255,0.75);max-width:500px;margin:0 auto;line-height:1.7;}
+.about-block{padding:2.5rem 2.5rem;border-bottom:1px solid var(--border);}
+.about-block h2{font-size:26px;color:var(--navy);margin-bottom:1rem;}
+.about-block p{font-size:16px;color:var(--muted);line-height:1.8;max-width:680px;}
+.how-steps{display:flex;flex-direction:column;gap:1.25rem;margin-top:1rem;}
+.how-step{display:flex;gap:1.25rem;align-items:flex-start;}
+.step-num{background:var(--navy);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;margin-top:2px;}
+.step-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:3px;}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.6;}
+
+/* PRIVATE PAGE */
+.private-hero{background:var(--navy);padding:4rem 2.5rem;text-align:center;}
+.private-hero h1{font-size:38px;color:#fff;margin-bottom:1rem;}
+.private-hero h1 em{color:var(--accent);font-style:italic;}
+.private-hero p{font-size:17px;color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto;line-height:1.7;}
+.occasion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;padding:2.5rem;}
+@media(max-width:768px){.occasion-grid{grid-template-columns:1fr;}}
+.occasion-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-align:center;}
+.occasion-icon{font-size:26px;margin-bottom:10px;}
+.occasion-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:6px;}
+.occasion-desc{font-size:13px;color:var(--muted);line-height:1.5;}
+.how-private{padding:0 2.5rem 2.5rem;}
+.how-private h2{font-size:26px;color:var(--navy);margin-bottom:1.25rem;}
+.private-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+@media(max-width:768px){.private-steps{grid-template-columns:1fr 1fr;}}
+.private-step{background:var(--bg2);border-radius:10px;padding:1.25rem;}
+.private-step-num{font-size:11px;color:var(--accent);font-weight:500;letter-spacing:0.5px;margin-bottom:5px;text-transform:uppercase;}
+.private-step-title{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:5px;}
+.private-step-desc{font-size:13px;color:var(--muted);line-height:1.5;}
+.private-form-section{padding:0 2.5rem 3rem;}
+.private-form-section h2{font-size:26px;color:var(--navy);margin-bottom:0.5rem;}
+.private-form-section p{font-size:14px;color:var(--muted);margin-bottom:1.5rem;}
+
+/* FORMS */
+.form-wrap{max-width:520px;}
+.field{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:0;}
+.field input,.field select,.field textarea{padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);width:100%;transition:border-color 0.2s;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--navy);}
+.field textarea{min-height:100px;resize:vertical;}
+.submit-btn{background:var(--navy);color:#fff;border:none;padding:13px;border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;cursor:pointer;width:100%;margin-top:0.75rem;transition:background 0.2s;}
+.submit-btn:hover{background:var(--navy-mid);}
+.form-page{padding:2.5rem;}
+.form-page h2{font-size:28px;color:var(--navy);margin-bottom:0.5rem;}
+.form-page p{font-size:14px;color:var(--muted);margin-bottom:1.5rem;max-width:500px;line-height:1.6;}
+.org-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.75rem;}
+.org-tag{background:var(--navy-light);color:var(--navy);font-size:12px;padding:5px 12px;border-radius:100px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="showPage('home')">exacta <span>experiences</span></div>
+  <div class="nav-links">
+    <a onclick="showPage('home')">trips</a>
+    <a onclick="showPage('about')">about</a>
+    <a onclick="showPage('private')">private events</a>
+    <button class="nav-cta" onclick="showPage('home')">reserve a spot</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home">
+  <div class="hero">
+    <div class="hero-eyebrow">serving encino + thousand oaks · 55+ community</div>
+    <h1>two activities.<br><em>one perfect day out.</em></h1>
+    <p>Curated group outings with shuttle pickup from your neighborhood. No traffic, no driving, no hassle — just show up, enjoy, and meet great people.</p>
+    <div class="audience-pills">
+      <span>designed for 55+</span><span>·</span><span>groups of 8–10</span><span>·</span><span>meet new people</span>
+    </div>
+    <div class="hero-types">
+      <span><span class="dot"></span> museum + lunch</span>
+      <span><span class="dot"></span> garden + coffee</span>
+      <span><span class="dot"></span> symphony + dinner</span>
+      <span><span class="dot"></span> wine tasting</span>
+    </div>
+    <button class="hero-btn">see upcoming trips</button>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><h2>upcoming outings</h2><a class="see-all">see all</a></div>
+    <p class="section-sub">daytime experiences with shuttle from your neighborhood</p>
+    <div class="trips">
+      <div class="trip-card" onclick="showDetail('getty')">
+        <img class="trip-img" src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=600&q=80" alt="Getty Center"/>
+        <div class="trip-body">
+          <div class="badge badge-navy">this saturday</div>
+          <div class="trip-title">Getty Center + lunch in Brentwood</div>
+          <div class="trip-pair">museum + lunch</div>
+          <div class="trip-meta"><span class="trip-date">Apr 5 · 10am</span><span class="trip-price">$50 / $85 pair</span></div>
+          <div class="spots">4 spots left</div>
+          <button class="view-btn">view trip</button>
+        </div>
+      </div>
+      <div class="trip-card" onclick="showDetail('descanso')">
+        <img class="trip-img" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80" alt="Descanso Gardens"/>
+        <div class="trip-body">
+          <div class="badge badge-navy">next thursday</div>
+          <div class="trip-title">Descanso Gardens + coffee stroll</div>
+          <div class="trip-pair">botanical garden + coffee</div>
+          <div class="trip-meta"><span class="trip-date">Apr 10 · 9:30am</span><span class="trip-price">$50 / $85 pair</span></div>
+          <div class="spots">7 spots left</div>
+          <button class="view-btn">view trip</button>
+        </div>
+      </div>
+      <div class="trip-card" onclick="showDetail('skirball')">
+        <img class="trip-img" src="https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?w=600&q=80" alt="Skirball"/>
+        <div class="trip-body">
+          <div class="badge badge-navy">apr 19</div>
+          <div class="trip-title">Skirball Cultural Center + dinner</div>
+          <div class="trip-pair">cultural center + dinner</div>
+          <div class="trip-meta"><span class="trip-date">Apr 19 · 11am</span><span class="trip-price">$50 / $85 pair</span></div>
+          <div class="spots">8 spots left</div>
+          <button class="view-btn">view trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-header"><h2>evening experiences</h2><a class="see-all">see all</a></div>
+    <p class="section-sub">symphony, theater, wine tasting & date nights — often less than uber/lyft alone</p>
+    <div class="trips">
+      <div class="trip-card" onclick="showDetail('symphony')">
+        <img class="trip-img" src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80" alt="Symphony"/>
+        <div class="trip-body">
+          <div class="badge badge-gold">evening · apr 12</div>
+          <div class="trip-title">LA Philharmonic + pre-show dinner</div>
+          <div class="trip-pair">symphony + dinner</div>
+          <div class="trip-meta"><span class="trip-date">Apr 12 · 5:30pm</span><span class="trip-price">$95 / $170 pair</span></div>
+          <div class="spots">6 spots left</div>
+          <button class="view-btn">view trip</button>
+        </div>
+      </div>
+      <div class="trip-card" onclick="showDetail('wine')">
+        <img class="trip-img" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80" alt="Wine Tasting"/>
+        <div class="trip-body">
+          <div class="badge badge-gold">apr 26</div>
+          <div class="trip-title">wine & cheese tasting evening</div>
+          <div class="trip-pair">wine tasting + charcuterie</div>
+          <div class="trip-meta"><span class="trip-date">Apr 26 · 6pm</span><span class="trip-price">$75 / $130 pair</span></div>
+          <div class="spots">8 spots left</div>
+          <button class="view-btn">view trip</button>
+        </div>
+      </div>
+      <div class="trip-card" onclick="showDetail('datenight')">
+        <img class="trip-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Date Night"/>
+        <div class="trip-body">
+          <div class="badge badge-gold">may 3</div>
+          <div class="trip-title">date night dinner at Bestia</div>
+          <div class="trip-pair">restaurant experience</div>
+          <div class="trip-meta"><span class="trip-date">May 3 · 7pm</span><span class="trip-price">$45 / $80 pair</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><div class="spots">5 spots left</div><div class="value-tag">vs $60+ uber</div></div>
+          <button class="view-btn">view trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h2>more than an outing — a community</h2>
+    <p>Every Exacta trip is a chance to explore something new and connect with like-minded people. Small groups mean real conversations, not just sightseeing.</p>
+    <div class="why-cards">
+      <div class="why-card"><div class="why-icon">🚌</div><div class="why-title">shuttle from your neighborhood</div><div class="why-desc">Pick up near you — no freeway driving, no parking stress, no surge pricing.</div></div>
+      <div class="why-card"><div class="why-icon">🎟</div><div class="why-title">everything is planned</div><div class="why-desc">Tickets, reservations, and logistics all handled. Just show up and enjoy.</div></div>
+      <div class="why-card"><div class="why-icon">🤝</div><div class="why-title">meet new people</div><div class="why-desc">Small groups of 8–10 make it easy to connect with others who share your interests.</div></div>
+    </div>
+  </div>
+
+  <div class="pickup">
+    <h2>pickup spots</h2>
+    <div class="pickup-grid">
+      <div class="pickup-card"><div class="pickup-name">Encino hub</div><div class="pickup-loc">Encino Commons parking lot · Ventura Blvd</div></div>
+      <div class="pickup-card"><div class="pickup-name">Thousand Oaks hub</div><div class="pickup-loc">Janss Marketplace · Moorpark Rd</div></div>
+    </div>
+  </div>
+
+  <div class="poll">
+    <h2>what should we plan next?</h2>
+    <p>Vote on ideas — the most popular trips get scheduled first.</p>
+    <div class="poll-list">
+      <div class="poll-opt"><span>Griffith Observatory + brunch</span><span class="poll-vote">vote →</span></div>
+      <div class="poll-opt"><span>Ahmanson Theatre + dinner</span><span class="poll-vote">vote →</span></div>
+      <div class="poll-opt"><span>Huntington Library + afternoon tea</span><span class="poll-vote">vote →</span></div>
+      <div class="poll-opt"><span>rooftop bar + small plates evening</span><span class="poll-vote">vote →</span></div>
+      <div class="poll-opt"><span>Hollywood Bowl summer concert</span><span class="poll-vote">vote →</span></div>
+    </div>
+  </div>
+
+  <div class="private-banner">
+    <div>
+      <h3>book a private shuttle experience</h3>
+      <p>Celebrate a birthday, plan a group night out, or create a custom outing. We'll handle everything — just tell us the occasion.</p>
+      <div class="tag-row">
+        <span class="tag">birthday celebrations</span>
+        <span class="tag">girls' night out</span>
+        <span class="tag">anniversary</span>
+        <span class="tag">family outings</span>
+      </div>
+    </div>
+    <button class="banner-btn" onclick="showPage('private')">plan your event</button>
+  </div>
+
+  <div class="partner-banner">
+    <div>
+      <h3>bring exacta to your community</h3>
+      <p>We partner with senior communities, churches, synagogues, and 55+ neighborhoods for dedicated group trips.</p>
+      <div class="tag-row">
+        <span class="partner-tag">senior living</span>
+        <span class="partner-tag">55+ HOAs</span>
+        <span class="partner-tag">churches</span>
+        <span class="partner-tag">synagogues</span>
+      </div>
+    </div>
+    <button class="partner-btn" onclick="showPage('interest')">express interest</button>
+  </div>
+
+  <footer>&copy; 2025 Exacta Experiences · Encino + Thousand Oaks · <a href="#">contact us</a></footer>
+</div>
+
+<!-- TRIP DETAIL -->
+<div id="page-detail" class="hidden">
+  <button class="back-btn" onclick="showPage('home')">← back to trips</button>
+  <div id="detail-content"></div>
+</div>
+
+<!-- ABOUT -->
+<div id="page-about" class="hidden">
+  <div class="about-hero">
+    <h1>about <em>exacta experiences</em></h1>
+    <p>We started Exacta because getting out and exploring LA shouldn't require sitting in traffic — or going it alone.</p>
+  </div>
+  <div class="about-block">
+    <h2>our story</h2>
+    <p>Exacta Experiences was born out of a simple observation: Los Angeles has world-class museums, gardens, restaurants, symphony halls, and cultural destinations — but getting to them from the suburbs is a barrier for many people, especially those who'd rather not drive on the freeway. We built Exacta to solve that. We plan the activities, reserve the tickets, book the restaurants, and provide the shuttle — all you have to do is show up at your neighborhood pickup spot and enjoy the day.</p>
+  </div>
+  <div class="about-block">
+    <h2>who we're for</h2>
+    <p>Exacta Experiences is designed for adults 55+ living in the Encino, Tarzana, Woodland Hills, and Thousand Oaks areas who want to stay active, explore, and connect with others — without the stress of driving into the city. Every outing is a paired experience: two activities together. Small groups of 8–10 mean you actually get to know the people you're with.</p>
+  </div>
+  <div class="about-block">
+    <h2>how it works</h2>
+    <div class="how-steps">
+      <div class="how-step"><div class="step-num">1</div><div><div class="step-title">browse upcoming trips</div><div class="step-desc">Daytime outings, evening events, wine tastings, symphony nights — all curated and planned in advance.</div></div></div>
+      <div class="how-step"><div class="step-num">2</div><div><div class="step-title">reserve your spot</div><div class="step-desc">Book online for yourself or a partner. Spots are limited to 8–10 per trip. Pay securely at checkout.</div></div></div>
+      <div class="how-step"><div class="step-num">3</div><div><div class="step-title">show up at your pickup spot</div><div class="step-desc">Meet the shuttle at your local hub in Encino or Thousand Oaks. No freeway, no parking, no stress.</div></div></div>
+      <div class="how-step"><div class="step-num">4</div><div><div class="step-title">enjoy the day — or night</div><div class="step-desc">Your guide handles everything. Relax, explore, and meet great people along the way.</div></div></div>
+    </div>
+  </div>
+  <div class="about-block">
+    <h2>pricing</h2>
+    <p>Daytime outings start at $50 per person or $85 for two. Evening experiences vary by event and are always clearly listed before you book. Our shuttle pricing is flat — no surge, no surprises, and often less than what you'd spend on rideshare alone.</p>
+  </div>
+  <footer>&copy; 2025 Exacta Experiences · <a onclick="showPage('home')" style="cursor:pointer;">back to home</a></footer>
+</div>
+
+<!-- PRIVATE EVENTS -->
+<div id="page-private" class="hidden">
+  <button class="back-btn" onclick="showPage('home')">← back to home</button>
+  <div class="private-hero">
+    <h1>private <em>shuttle experiences</em></h1>
+    <p>Book the full shuttle for your group and we'll plan a custom day or evening around your occasion. You bring the people — we handle everything else.</p>
+  </div>
+  <div class="occasion-grid">
+    <div class="occasion-card"><div class="occasion-icon">🎂</div><div class="occasion-title">birthday celebration</div><div class="occasion-desc">A curated day or night out — activity, dinner, and great company.</div></div>
+    <div class="occasion-card"><div class="occasion-icon">🥂</div><div class="occasion-title">girls' or guys' night out</div><div class="occasion-desc">Wine, dinner, or a fun evening experience with your crew.</div></div>
+    <div class="occasion-card"><div class="occasion-icon">💍</div><div class="occasion-title">anniversary outing</div><div class="occasion-desc">Celebrate a milestone with a special paired experience.</div></div>
+    <div class="occasion-card"><div class="occasion-icon">👨‍👩‍👧</div><div class="occasion-title">family outing</div><div class="occasion-desc">A stress-free day for the whole family — no one has to drive.</div></div>
+    <div class="occasion-card"><div class="occasion-icon">🎉</div><div class="occasion-title">friend group adventure</div><div class="occasion-desc">Something unique for your group — we'll suggest the perfect itinerary.</div></div>
+    <div class="occasion-card"><div class="occasion-icon">✨</div><div class="occasion-title">custom occasion</div><div class="occasion-desc">Have something else in mind? Tell us and we'll make it happen.</div></div>
+  </div>
+  <div class="how-private">
+    <h2>how private bookings work</h2>
+    <div class="private-steps">
+      <div class="private-step"><div class="private-step-num">step 1</div><div class="private-step-title">tell us your occasion</div><div class="private-step-desc">Fill out the form with your group size, date, and the vibe you're going for.</div></div>
+      <div class="private-step"><div class="private-step-num">step 2</div><div class="private-step-title">we plan the experience</div><div class="private-step-desc">We'll come back with a custom itinerary tailored to your group.</div></div>
+      <div class="private-step"><div class="private-step-num">step 3</div><div class="private-step-title">approve + book</div><div class="private-step-desc">Love the plan? Confirm and pay to lock in your date.</div></div>
+      <div class="private-step"><div class="private-step-num">step 4</div><div class="private-step-title">just show up</div><div class="private-step-desc">Shuttle, guide, tickets, and reservations — all set.</div></div>
+    </div>
+  </div>
+  <div class="private-form-section">
+    <h2>tell us about your event</h2>
+    <p>Fill out the form and we'll be in touch within 48 hours with ideas and pricing.</p>
+    <div class="form-wrap">
+      <div class="field">
+        <input type="text" placeholder="your name"/>
+        <input type="email" placeholder="email address"/>
+        <input type="tel" placeholder="phone number"/>
+        <select><option value="" disabled selected>occasion type</option><option>birthday celebration</option><option>girls' night out</option><option>guys' night out</option><option>anniversary outing</option><option>family outing</option><option>friend group adventure</option><option>other</option></select>
+        <input type="number" placeholder="estimated group size (max 10)" min="2" max="10"/>
+        <input type="date"/>
+        <select><option value="" disabled selected>preferred time of day</option><option>morning (9am – 12pm)</option><option>midday (12pm – 3pm)</option><option>evening (5pm – 9pm)</option><option>flexible</option></select>
+        <textarea placeholder="tell us about the occasion and any activity preferences — art, food, outdoors, wine, live music, theater..."></textarea>
+        <button class="submit-btn">submit inquiry</button>
+      </div>
+    </div>
+  </div>
+  <footer>&copy; 2025 Exacta Experiences · <a onclick="showPage('home')" style="cursor:pointer;">back to home</a></footer>
+</div>
+
+<!-- INTEREST FORM -->
+<div id="page-interest" class="hidden">
+  <button class="back-btn" onclick="showPage('home')">← back to home</button>
+  <div class="form-page">
+    <h2>bring exacta to your community</h2>
+    <p>We partner with senior living communities, 55+ neighborhoods, churches, synagogues, and community centers to offer dedicated shuttle trips for your members.</p>
+    <div class="org-tags">
+      <span class="org-tag">senior living</span><span class="org-tag">55+ neighborhoods</span><span class="org-tag">churches</span><span class="org-tag">synagogues</span><span class="org-tag">community centers</span>
+    </div>
+    <div class="form-wrap">
+      <div class="field">
+        <input type="text" placeholder="organization name"/>
+        <select><option value="" disabled selected>organization type</option><option>senior living community</option><option>55+ neighborhood / HOA</option><option>church</option><option>synagogue</option><option>community center</option><option>other</option></select>
+        <input type="text" placeholder="your name"/>
+        <input type="email" placeholder="email address"/>
+        <input type="tel" placeholder="phone number (optional)"/>
+        <textarea placeholder="tell us about your group — approximate size, location, interests..."></textarea>
+        <button class="submit-btn">submit interest</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const trips = {
+  getty:{img:'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=1200&q=80',badgeType:'navy',badge:'this saturday · apr 5',title:'Getty Center + lunch in Brentwood',pair:'museum + lunch',desc:'The Getty Center is one of Los Angeles\'s crown jewels — perched high above the city with sweeping views, world-class art, and stunning architecture. We\'ll spend the morning exploring the permanent collection and rotating exhibitions at our own pace, then head to a reserved table at a beloved Brentwood restaurant for a relaxed group lunch. No driving, no parking — just a beautiful day in great company.',date:'Saturday, Apr 5',time:'10:00am – 3:30pm',pickup:'Encino hub · 9:30am',price:'$50 / $85 pair',spots:'4 spots left',itinerary:[{time:'9:30am',text:'Shuttle departs Encino hub'},{time:'10:00am',text:'Arrive at Getty Center — explore at your own pace'},{time:'12:30pm',text:'Group lunch at Farmshop, Brentwood'},{time:'2:30pm',text:'Depart for home'},{time:'3:30pm',text:'Arrive back at Encino hub'}]},
+  descanso:{img:'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=80',badgeType:'navy',badge:'next thursday · apr 10',title:'Descanso Gardens + coffee stroll',pair:'botanical garden + coffee',desc:'Descanso Gardens is a hidden gem in La Cañada Flintridge — 150 acres of stunning gardens featuring thousands of camellias, a Japanese garden, and seasonal blooms. We\'ll take a leisurely stroll through the grounds, then wind down with coffee and pastries at a charming local café nearby. A perfect, peaceful morning out.',date:'Thursday, Apr 10',time:'9:30am – 1:00pm',pickup:'Both hubs · 9:00am',price:'$50 / $85 pair',spots:'7 spots left',itinerary:[{time:'9:00am',text:'Shuttle departs both hubs'},{time:'9:30am',text:'Arrive at Descanso Gardens'},{time:'11:30am',text:'Coffee + pastries at nearby café'},{time:'12:30pm',text:'Depart for home'},{time:'1:00pm',text:'Arrive back at pickup hubs'}]},
+  skirball:{img:'https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?w=1200&q=80',badgeType:'navy',badge:'apr 19',title:'Skirball Cultural Center + dinner',pair:'cultural center + dinner',desc:'The Skirball Cultural Center is a beautiful institution dedicated to Jewish heritage, American history, and the universal human story. Their exhibitions are thought-provoking and accessible. After exploring the galleries, we\'ll head to a reserved dinner at a nearby Westside restaurant for a relaxed evening together.',date:'Saturday, Apr 19',time:'11:00am – 5:00pm',pickup:'Both hubs · 10:30am',price:'$50 / $85 pair',spots:'8 spots left',itinerary:[{time:'10:30am',text:'Shuttle departs both hubs'},{time:'11:00am',text:'Arrive at Skirball Cultural Center'},{time:'1:30pm',text:'Group dinner at nearby Westside restaurant'},{time:'3:30pm',text:'Depart for home'},{time:'4:30pm',text:'Arrive back at pickup hubs'}]},
+  symphony:{img:'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=1200&q=80',badgeType:'gold',badge:'evening · apr 12',title:'LA Philharmonic + pre-show dinner',pair:'symphony + dinner',desc:'An unforgettable evening at Walt Disney Concert Hall — one of the world\'s most celebrated performance spaces — featuring the LA Philharmonic. We\'ll start with a reserved group dinner at a nearby restaurant before the show, then enjoy the performance together. No parking, no driving — just a world-class night out. Tickets are included in your reservation.',date:'Saturday, Apr 12',time:'5:30pm – 10:30pm',pickup:'Both hubs · 5:00pm',price:'$95 / $170 pair',spots:'6 spots left',itinerary:[{time:'5:00pm',text:'Shuttle departs both hubs'},{time:'5:30pm',text:'Group dinner at nearby downtown restaurant'},{time:'7:30pm',text:'LA Philharmonic at Walt Disney Concert Hall'},{time:'10:00pm',text:'Shuttle departs for home'},{time:'10:30pm',text:'Arrive back at pickup hubs'}]},
+  wine:{img:'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1200&q=80',badgeType:'gold',badge:'evening · apr 26',title:'wine & cheese tasting evening',pair:'wine tasting + charcuterie',desc:'A curated wine and cheese tasting experience at a boutique Westside wine bar — featuring a guided flight of hand-selected wines paired with artisan charcuterie and cheeses. Our sommelier host will walk through each wine\'s story, region, and flavor profile. A relaxed, convivial evening that\'s as educational as it is enjoyable. Shuttle included — no need to worry about who\'s driving.',date:'Saturday, Apr 26',time:'6:00pm – 9:30pm',pickup:'Both hubs · 5:30pm',price:'$75 / $130 pair',spots:'8 spots left',itinerary:[{time:'5:30pm',text:'Shuttle departs both hubs'},{time:'6:00pm',text:'Arrive at wine bar — welcome glass on arrival'},{time:'6:15pm',text:'Guided wine + cheese tasting flight begins'},{time:'8:30pm',text:'Open tasting + mingling'},{time:'9:00pm',text:'Shuttle departs for home'},{time:'9:30pm',text:'Arrive back at pickup hubs'}]},
+  datenight:{img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80',badgeType:'gold',badge:'evening · may 3',title:'date night dinner at Bestia',pair:'restaurant experience',desc:'Skip the Uber surge and let us take you to one of LA\'s most celebrated restaurants — Bestia in the Arts District. We\'ve reserved a group table so you can enjoy a truly special dinner without the stress of getting there. At $45 per person or $80 for two, you\'ll likely spend less on the shuttle than you would on rideshare alone, leaving more room to enjoy the meal.',date:'Saturday, May 3',time:'7:00pm – 10:30pm',pickup:'Both hubs · 6:30pm',price:'$45 / $80 pair',spots:'5 spots left',itinerary:[{time:'6:30pm',text:'Shuttle departs both hubs'},{time:'7:00pm',text:'Arrive at Bestia, Arts District'},{time:'7:00pm',text:'Group dinner — full menu available'},{time:'9:30pm',text:'Shuttle departs for home'},{time:'10:00pm',text:'Arrive back at pickup hubs'}]}
+};
+
+function showPage(p){
+  ['home','detail','about','private','interest'].forEach(id=>document.getElementById('page-'+id).classList.add('hidden'));
+  document.getElementById('page-'+p).classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+function showDetail(id){
+  const t=trips[id];
+  const badgeEl=t.badgeType==='gold'
+    ?`<div class="badge badge-gold">${t.badge}</div>`
+    :`<div class="badge badge-navy">${t.badge}</div>`;
+  document.getElementById('detail-content').innerHTML=`
+    <img class="detail-img" src="${t.img}" alt="${t.title}"/>
+    <div class="detail-body">
+      ${badgeEl}
+      <div class="detail-title">${t.title}</div>
+      <div class="detail-pair">${t.pair}</div>
+      <p class="detail-desc">${t.desc}</p>
+      <div class="detail-grid">
+        <div class="detail-info"><div class="detail-info-label">date & time</div><div class="detail-info-val">${t.date}<br>${t.time}</div></div>
+        <div class="detail-info"><div class="detail-info-label">pickup</div><div class="detail-info-val">${t.pickup}</div></div>
+        <div class="detail-info"><div class="detail-info-label">price</div><div class="detail-info-val">${t.price}</div></div>
+        <div class="detail-info"><div class="detail-info-label">availability</div><div class="detail-info-val" style="color:#27500A">${t.spots}</div></div>
+      </div>
+      <h3 class="itinerary-title">trip itinerary</h3>
+      ${t.itinerary.map(s=>`<div class="itinerary-step"><span class="step-time">${s.time}</span><span class="step-text">${s.text}</span></div>`).join('')}
+      <button class="detail-reserve">reserve a spot</button>
+    </div>`;
+  showPage('detail');
+}
+</script>
+</body>
+</html>
