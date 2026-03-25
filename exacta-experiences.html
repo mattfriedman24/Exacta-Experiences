@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Exacta Experiences — Los Angeles</title>
-<meta name="description" content="Curated paired experiences across LA — date nights, morning adventures, gallery days, farmers markets, comedy shows. Locally curated, always free to plan."/>
+<title>Pairing.la — Los Angeles</title>
+<meta name="description" content="paired.la — let us plan the perfect half day for you. Curated AI paired experiences across Los Angeles."/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -221,6 +221,71 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
 .ft-links{display:flex;gap:1.5rem;}
 .ft-links a{font-size:13px;color:rgba(255,255,255,0.3);cursor:pointer;text-decoration:none;}
 .ft-note{font-size:12px;color:rgba(255,255,255,0.2);}
+
+/* ── BYO ── */
+.byo-step-block{margin-bottom:1.5rem;}
+.byo-step-label{font-size:12px;text-transform:uppercase;letter-spacing:0.8px;font-weight:500;color:var(--teal);margin-bottom:14px;}
+.byo-vibe-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.vibe-card{border:0.5px solid var(--bdr);border-radius:12px;padding:14px 16px;cursor:pointer;transition:all 0.15s;background:var(--wht);}
+.vibe-card:hover{border-color:var(--teal);background:var(--tl);}
+.vibe-card.active{border:1.5px solid var(--teal);background:var(--tl);}
+.vibe-icon{font-size:20px;margin-bottom:6px;}
+.vibe-name{font-size:14px;font-weight:500;margin-bottom:3px;}
+.vibe-desc{font-size:12px;color:var(--muted);}
+.byo-interest-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.int-pill{padding:8px 16px;border-radius:100px;border:0.5px solid var(--bdr);font-size:13px;color:var(--muted);background:var(--wht);cursor:pointer;transition:all 0.15s;}
+.int-pill:hover{border-color:var(--teal);color:var(--teal);}
+.int-pill.active{background:var(--tl);border-color:#5DCAA5;color:var(--td);font-weight:500;}
+.byo-budget-list{display:flex;flex-direction:column;gap:8px;}
+.bud-card{display:flex;align-items:center;gap:16px;border:0.5px solid var(--bdr);border-radius:12px;padding:14px 18px;cursor:pointer;transition:all 0.15s;background:var(--wht);}
+.bud-card:hover{border-color:var(--teal);background:var(--tl);}
+.bud-card.active{border:1.5px solid var(--teal);background:var(--tl);}
+.bud-tier{font-size:20px;font-weight:500;min-width:44px;}
+.bud-label{font-size:14px;font-weight:500;margin-bottom:2px;}
+.bud-sub{font-size:12px;color:var(--muted);}
+.b1c{color:#1B7A50;}.b2c{color:#CC8800;}.b3c{color:#CC4400;}.b4c{color:#CC0022;}
+.byo-next-btn{background:var(--teal);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:14px;cursor:pointer;font-weight:500;font-family:var(--font);}
+.byo-back-btn{background:var(--wht);color:var(--muted);border:0.5px solid var(--bdr);padding:10px 18px;border-radius:8px;font-size:14px;cursor:pointer;font-family:var(--font);}
+
+/* BYO RESULT CARD */
+.pkg-card{background:var(--ink);border-radius:14px;overflow:hidden;margin-bottom:1rem;}
+.pkg-hdr{background:var(--teal);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;}
+.pkg-hdr-name{font-size:16px;font-weight:500;color:#fff;font-style:italic;}
+.pkg-hdr-bud{font-size:13px;color:rgba(255,255,255,0.8);}
+.pkg-body{padding:16px 18px;}
+.pkg-item{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;}
+.pkg-dot{width:8px;height:8px;border-radius:50%;margin-top:4px;flex-shrink:0;}
+.pkg-dot-gold{background:var(--gold);}
+.pkg-dot-teal{background:#5DCAA5;}
+.pkg-dot-rose{background:#D4415A;}
+.pkg-dot-purple{background:#7C3AED;}
+.pkg-item-main{font-size:14px;color:#fff;margin-bottom:2px;line-height:1.4;}
+.pkg-item-sub{font-size:12px;color:rgba(255,255,255,0.45);}
+.pkg-item-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:100px;margin-top:3px;}
+.badge-free{background:rgba(93,202,165,0.2);color:#5DCAA5;}
+.badge-dessert{background:rgba(212,65,90,0.2);color:#F9A0B0;}
+.badge-addon{background:rgba(124,58,237,0.2);color:#C4B5FD;}
+.pkg-footer{padding:0 18px 16px;display:flex;gap:8px;}
+.pkg-save{background:var(--teal);color:#fff;border:none;padding:9px 20px;border-radius:7px;font-size:13px;cursor:pointer;font-weight:500;font-family:var(--font);}
+.pkg-save:hover{background:#005A5A;}
+.pkg-restart{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.15);padding:9px 16px;border-radius:7px;font-size:13px;cursor:pointer;font-family:var(--font);}
+
+/* BYO SWAP */
+.swap-section{background:var(--color-background-secondary);border:0.5px solid var(--bdr);border-radius:12px;padding:14px 16px;margin-top:1rem;}
+.swap-hdr{font-size:13px;font-weight:500;margin-bottom:4px;}
+.swap-sub-txt{font-size:12px;color:var(--muted);margin-bottom:12px;}
+.swap-opts{display:flex;flex-direction:column;gap:6px;}
+.swap-opt{display:flex;align-items:center;gap:10px;border:0.5px solid var(--bdr);border-radius:9px;padding:10px 12px;cursor:pointer;transition:all 0.12s;background:var(--wht);}
+.swap-opt:hover{border-color:#5DCAA5;}
+.swap-opt.active{border:1.5px solid var(--teal);background:var(--tl);}
+.swap-opt-name{font-size:13px;font-weight:500;flex:1;}
+.swap-opt-meta{font-size:11px;color:var(--muted);}
+.swap-rec{font-size:10px;font-weight:500;color:#7A5800;background:#fff;border:0.5px solid #E8D090;padding:2px 7px;border-radius:100px;white-space:nowrap;}
+.swap-updated{background:var(--ink);border-radius:10px;padding:12px 14px;margin-top:10px;display:none;}
+.swap-updated-eye{font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#5DCAA5;margin-bottom:4px;font-weight:500;}
+.swap-updated-title{font-size:14px;font-weight:500;color:#fff;margin-bottom:8px;font-style:italic;}
+.swap-save{background:var(--teal);color:#fff;border:none;padding:7px 16px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:500;font-family:var(--font);}
+.swap-reset{background:none;border:0.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);padding:7px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:var(--font);}
 </style>
 </head>
 <body>
@@ -229,16 +294,15 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
   <a class="logo-wrap" href="/">
     <div class="logo-badge">×2</div>
     <div>
-      <div class="logo-text">exacta <span>experiences</span></div>
-      <div class="logo-sub">los angeles · locally curated · always free</div>
+      <div class="logo-text">paired<span>.la</span></div>
+      <div class="logo-sub">los angeles · curated ai · locally sourced</div>
     </div>
   </a>
   <div class="nav-links">
     <a onclick="showV('home')">discover</a>
     <a onclick="showV('byo')">build your own</a>
-    <a onclick="showV('pairing')">build a pairing</a>
     <button class="loved-btn" onclick="showV('loved')">♥ saved <span class="lc" id="lc">0</span></button>
-    <button class="nav-cta">plan my day</button>
+    <button class="nav-cta" onclick="showV('byo')">plan my day</button>
   </div>
 </div>
 
@@ -247,40 +311,23 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
 
   <div class="hero">
     <div class="hero-eyebrow">
-      <span class="hero-tag">los angeles · always free</span>
-      <span class="hero-local">locally curated — not tourist traps</span>
+      <span class="hero-tag">curated ai · los angeles</span>
+      <span class="hero-local">locally sourced — not tourist traps</span>
     </div>
-    <h1>two activities.<br><em>one perfect day.</em></h1>
-    <p>Day or night, morning or evening — curated paired experiences across LA. No tourist traps, no algorithm, just real picks.</p>
-    <div class="hero-cats">
-      <div class="fp active" onclick="setCat(this,'all')">all</div>
-      <div class="fp" onclick="setCat(this,'morning')">morning</div>
-      <div class="fp" onclick="setCat(this,'date')">date night</div>
-      <div class="fp" onclick="setCat(this,'gallery')">galleries</div>
-      <div class="fp" onclick="setCat(this,'bar')">bars</div>
-      <div class="fp" onclick="setCat(this,'comedy')">comedy</div>
-      <div class="fp" onclick="setCat(this,'market')">farmers market</div>
-      <div class="fp" onclick="setCat(this,'coffee')">coffee</div>
-      <div class="fp" onclick="setCat(this,'dinner')">dinner</div>
-      <div class="fp" onclick="setCat(this,'cheap')">$ cheap</div>
-    </div>
-    <div class="hero-search">
-      <input type="text" id="search-input" placeholder="search by vibe, neighborhood, activity..." oninput="doSearch(this.value)"/>
-      <button onclick="doSearch(document.getElementById('search-input').value)">find it</button>
-    </div>
+    <h1>let us plan the<br><em>perfect half day.</em></h1>
+    <p>paired.la pairs two activities into one curated LA experience. Morning, afternoon, or evening — real local picks, no algorithm, no tourist traps.</p>
   </div>
 
   <div class="byo-teaser">
     <div class="byo-t-left">
       <div class="byo-icon">✦</div>
       <div>
-        <h3>not sure where to start?</h3>
-        <p>tell us your vibe and budget — we'll build a custom LA day for you</p>
+        <h3>let us plan your perfect half day</h3>
+        <p>tell us your vibe and budget — paired.la builds a curated AI experience for you</p>
       </div>
     </div>
     <div class="byo-t-btns">
-      <button class="byo-gold" onclick="showV('byo')">build your own →</button>
-      <button class="byo-ghost" onclick="showV('pairing')">build a pairing</button>
+      <button class="byo-gold" onclick="showV('byo')">build your own</button>
     </div>
   </div>
 
@@ -314,8 +361,16 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
       <span class="fb-lbl">when?</span>
       <button class="ds-btn active" onclick="selM(this,'weekend')">this weekend</button>
       <button class="ds-btn" onclick="selM(this,'any')">any time</button>
-      <button class="ds-btn" onclick="togCal(this)">pick a date</button>
+      <button class="ds-btn" id="btn-mothers" onclick="selHoliday(this,'mothers')">mother's day</button>
+      <button class="ds-btn" id="btn-fathers" onclick="selHoliday(this,'fathers')">father's day</button>
+      <button class="ds-btn" onclick="togCal(this)">pick a date range</button>
       <button class="ds-clear" id="clr" style="display:none;" onclick="clrD()">✕ clear</button>
+    </div>
+    <div class="fb-inner" style="margin-top:8px;">
+      <span class="fb-lbl">time of day</span>
+      <button class="ds-btn" id="tod-day" onclick="setTod(this,'day')">day</button>
+      <button class="ds-btn" id="tod-night" onclick="setTod(this,'night')">night</button>
+      <button class="ds-btn active" id="tod-either" onclick="setTod(this,'either')">either</button>
     </div>
     <div class="cal-out" id="cal-out"><div class="cal-g" id="cal-g"></div></div>
     <div class="ds-res" id="ds-res"><strong>Sat Mar 21 + Sun Mar 22</strong></div>
@@ -323,11 +378,10 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
 
   <div class="bbar">
     <span class="bb-lbl">budget</span>
-    <button class="bb-btn active" onclick="setBgt(this,'all')">all</button>
-    <button class="bb-btn" onclick="setBgt(this,'1')">$ under $30</button>
-    <button class="bb-btn" onclick="setBgt(this,'2')">$$ $30–$75</button>
-    <button class="bb-btn" onclick="setBgt(this,'3')">$$$ $75–$150</button>
-    <button class="bb-btn" onclick="setBgt(this,'4')">$$$$ $150+</button>
+    <button class="bb-btn active" onclick="toggleBgt(this,'1')">$ under $30</button>
+    <button class="bb-btn active" onclick="toggleBgt(this,'2')">$$ $30–$75</button>
+    <button class="bb-btn active" onclick="toggleBgt(this,'3')">$$$ $75–$150</button>
+    <button class="bb-btn active" onclick="toggleBgt(this,'4')">$$$$ $150+</button>
   </div>
 
   <div class="res-bar">
@@ -353,7 +407,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
           <span class="tag t-morn">morning</span>
           <span class="tag t-local">local pick</span>
         </div>
-        <div class="promo-disc">🎁 exacta exclusive: show this page for 10% off</div>
+        <div class="promo-disc">🎁 paired.la exclusive: show this page for 10% off</div>
       </div>
       <div class="er">
         <button class="love-btn" onclick="tgL(event,'promo','La La Land + Greystone (featured)','Silver Lake','coffee + historic walk')">♡</button>
@@ -363,7 +417,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- FLOWER MARKET — score:100 (recurring) -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="dtla" data-score="100" id="exp-flower">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="dtla" data-score="100" id="exp-flower" data-time="day">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">Mon–Sat</div></div>
       <div>
         <div class="ei-hood">DTLA · flower district</div>
@@ -386,7 +440,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- THUNDERBOLT — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="hifilipino" data-score="100" id="exp-thunderbolt">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="hifilipino" data-score="100" id="exp-thunderbolt" data-time="night">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">anytime</div></div>
       <div>
         <div class="ei-hood">historic filipinotown</div>
@@ -406,7 +460,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- MIRATE — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="losfeliz" data-score="100" id="exp-mirate">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="losfeliz" data-score="100" id="exp-mirate" data-time="night">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">anytime</div></div>
       <div>
         <div class="ei-hood">los feliz</div>
@@ -427,7 +481,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- VANDELL — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="losfeliz" data-score="100" id="exp-vandell">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="losfeliz" data-score="100" id="exp-vandell" data-time="night">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">anytime</div></div>
       <div>
         <div class="ei-hood">los feliz · hillhurst ave</div>
@@ -447,7 +501,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- ERB — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="dtla" data-score="100" id="exp-erb">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="dtla" data-score="100" id="exp-erb" data-time="night">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">anytime</div></div>
       <div>
         <div class="ei-hood">DTLA · arts district</div>
@@ -468,7 +522,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- HAUSER — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="dtla" data-score="100" id="exp-hauser">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="dtla" data-score="100" id="exp-hauser" data-time="either">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">ongoing</div></div>
       <div>
         <div class="ei-hood">DTLA · arts district</div>
@@ -491,7 +545,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- GORKY WEHO — score:0 (dated event) -->
-    <div class="ec" data-date="2026-02-21" data-end="2026-04-25" data-budget="2" data-hood="weho" data-score="0" id="exp-gorky">
+    <div class="ec" data-date="2026-02-21" data-end="2026-04-25" data-budget="2" data-hood="weho" data-score="0" id="exp-gorky" data-time="either">
       <div class="edb"><div class="edb-day">25</div><div class="edb-month">Apr</div><div class="edb-dow">ends</div></div>
       <div>
         <div class="ei-hood">west hollywood · hauser &amp; wirth</div>
@@ -514,7 +568,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- GROUNDLINGS — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="hollywood" data-score="100" id="exp-groundlings">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="2" data-hood="hollywood" data-score="100" id="exp-groundlings" data-time="night">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">Thu–Sun</div></div>
       <div>
         <div class="ei-hood">melrose</div>
@@ -534,7 +588,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- SM MARKET — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="venice" data-score="100" id="exp-smmarket">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="venice" data-score="100" id="exp-smmarket" data-time="day">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">sat/sun</div></div>
       <div>
         <div class="ei-hood">santa monica</div>
@@ -556,7 +610,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- SILVER LAKE MARKET — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="silverlake" data-score="100" id="exp-slmarket">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="silverlake" data-score="100" id="exp-slmarket" data-time="day">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">saturday</div></div>
       <div>
         <div class="ei-hood">silver lake</div>
@@ -579,7 +633,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- ECHO PARK — score:100 -->
-    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="echopk" data-score="100" id="exp-echopk">
+    <div class="ec" data-date="2026-01-01" data-end="2027-01-01" data-budget="1" data-hood="echopk" data-score="100" id="exp-echopk" data-time="night">
       <div class="edb"><div class="edb-star">★</div><div class="edb-month">anytime</div></div>
       <div>
         <div class="ei-hood">echo park</div>
@@ -601,7 +655,7 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     </div>
 
     <!-- VENICE LOVE FEST — score:0 (one-time event) -->
-    <div class="ec" data-date="2026-03-21" data-end="2026-03-22" data-budget="1" data-hood="venice" data-score="0" id="exp-venice">
+    <div class="ec" data-date="2026-03-21" data-end="2026-03-22" data-budget="1" data-hood="venice" data-score="0" id="exp-venice" data-time="either">
       <div class="edb"><div class="edb-day">22</div><div class="edb-month">Mar</div><div class="edb-dow">Sun</div></div>
       <div>
         <div class="ei-hood">venice beach</div>
@@ -628,10 +682,84 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
 <!-- BYO VIEW -->
 <div id="view-byo" class="hidden">
   <button class="back-btn" onclick="showV('home')">← back to discover</button>
-  <div style="padding:2rem;background:var(--gray);margin-top:1rem;text-align:center;color:var(--muted);font-size:15px;line-height:2;">
-    <strong style="color:var(--ink);font-style:italic;">build your own experience</strong><br>
-    Full interactive builder coming soon — vibe + interests + budget → custom LA day.<br><br>
-    <button onclick="showV('home')" style="background:var(--teal);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:14px;cursor:pointer;font-family:var(--font);">← back to discover</button>
+
+  <div style="padding:1.5rem 2rem 3rem;max-width:700px;">
+
+    <!-- HEADER -->
+    <div style="margin-bottom:1.75rem;">
+      <div style="font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.8px;font-weight:500;margin-bottom:6px;">paired.la · curated ai</div>
+      <div style="font-size:26px;font-weight:500;font-style:italic;letter-spacing:-0.75px;margin-bottom:6px;">let us plan the perfect half day</div>
+      <div style="font-size:14px;color:var(--muted);line-height:1.6;">tell us your vibe, what you're into, and your budget — we'll put together a curated AI half day just for you.</div>
+    </div>
+
+    <!-- STEP 1: VIBE -->
+    <div class="byo-step-block" id="byo-step-1">
+      <div class="byo-step-label">step 1 — what kind of day?</div>
+      <div class="byo-vibe-grid" id="byo-vibes">
+        <div class="vibe-card" onclick="setVibe('morning',this)"><div class="vibe-icon">☀️</div><div class="vibe-name">morning outing</div><div class="vibe-desc">early start, coffee, markets, walks</div></div>
+        <div class="vibe-card" onclick="setVibe('date',this)"><div class="vibe-icon">🕯</div><div class="vibe-name">date night</div><div class="vibe-desc">evening only · romantic · special</div></div>
+        <div class="vibe-card" onclick="setVibe('dinner',this)"><div class="vibe-icon">🍽</div><div class="vibe-name">dinner and ___</div><div class="vibe-desc">great meal paired with something</div></div>
+        <div class="vibe-card" onclick="setVibe('friends',this)"><div class="vibe-icon">🥂</div><div class="vibe-name">friends night out</div><div class="vibe-desc">group energy, bars, fun</div></div>
+        <div class="vibe-card" onclick="setVibe('culture',this)"><div class="vibe-icon">🎨</div><div class="vibe-name">arts & culture</div><div class="vibe-desc">galleries, museums, comedy</div></div>
+        <div class="vibe-card" onclick="setVibe('outdoor',this)"><div class="vibe-icon">🌊</div><div class="vibe-name">outdoor adventure</div><div class="vibe-desc">hikes, beach, nature</div></div>
+        <div class="vibe-card" onclick="setVibe('comedy',this)"><div class="vibe-icon">😂</div><div class="vibe-name">comedy night</div><div class="vibe-desc">live shows, laughs, late night</div></div>
+        <div class="vibe-card" onclick="setVibe('local',this)"><div class="vibe-icon">📍</div><div class="vibe-name">local explorer</div><div class="vibe-desc">off the beaten path, real LA</div></div>
+      </div>
+    </div>
+
+    <!-- STEP 2: INTERESTS -->
+    <div class="byo-step-block" id="byo-step-2" style="display:none;">
+      <div class="byo-step-label">step 2 — what are you into?</div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:14px;">pick as many as you like</div>
+      <div class="byo-interest-grid" id="byo-interests">
+        <div class="int-pill" onclick="toggleInt(this,'coffee')">☕ specialty coffee</div>
+        <div class="int-pill" onclick="toggleInt(this,'art')">🎨 art & galleries</div>
+        <div class="int-pill" onclick="toggleInt(this,'market')">🥦 farmers markets</div>
+        <div class="int-pill" onclick="toggleInt(this,'outdoor')">🌿 outdoor & walks</div>
+        <div class="int-pill" onclick="toggleInt(this,'bar')">🍸 bars & cocktails</div>
+        <div class="int-pill" onclick="toggleInt(this,'food')">🍝 great food</div>
+        <div class="int-pill" onclick="toggleInt(this,'dessert')">🍦 dessert</div>
+        <div class="int-pill" onclick="toggleInt(this,'free')">✦ free add-ons</div>
+        <div class="int-pill" onclick="toggleInt(this,'history')">🏛 history & culture</div>
+        <div class="int-pill" onclick="toggleInt(this,'comedy')">😂 live comedy</div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:1.5rem;">
+        <button class="byo-next-btn" onclick="showStep(3)">next →</button>
+        <button class="byo-back-btn" onclick="showStep(1)">← back</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: BUDGET -->
+    <div class="byo-step-block" id="byo-step-3" style="display:none;">
+      <div class="byo-step-label">step 3 — budget per person?</div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:14px;">select all that apply</div>
+      <div class="byo-budget-list" id="byo-budgets">
+        <div class="bud-card active" onclick="toggleBudget(this,'1')">
+          <div class="bud-tier b1c">$</div>
+          <div><div class="bud-label">under $30</div><div class="bud-sub">free activities, cheap eats, coffee</div></div>
+        </div>
+        <div class="bud-card active" onclick="toggleBudget(this,'2')">
+          <div class="bud-tier b2c">$$</div>
+          <div><div class="bud-label">$30 – $75</div><div class="bud-sub">casual restaurants, bars, one activity</div></div>
+        </div>
+        <div class="bud-card active" onclick="toggleBudget(this,'3')">
+          <div class="bud-tier b3c">$$$</div>
+          <div><div class="bud-label">$75 – $150</div><div class="bud-sub">nicer dinner, show tickets, cocktails</div></div>
+        </div>
+        <div class="bud-card active" onclick="toggleBudget(this,'4')">
+          <div class="bud-tier b4c">$$$$</div>
+          <div><div class="bud-label">special occasion</div><div class="bud-sub">Bestia, Nobu, LA Phil — all in</div></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:1.5rem;">
+        <button class="byo-next-btn" onclick="generateByo()">build my half day →</button>
+        <button class="byo-back-btn" onclick="showStep(2)">← back</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div id="byo-result" style="display:none;margin-top:1.75rem;"></div>
+
   </div>
 </div>
 
@@ -665,8 +793,8 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
 
 <footer>
   <div>
-    <div class="ft-logo">exacta <span>experiences</span></div>
-    <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:2px;">los angeles · locally curated · always free</div>
+    <div class="ft-logo">paired<span>.la</span></div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:2px;">los angeles · curated ai · locally sourced</div>
   </div>
   <div class="ft-links">
     <a onclick="showV('home')">discover</a>
@@ -675,15 +803,15 @@ footer{padding:1.5rem 2rem;background:var(--ink);border-top:1px solid rgba(255,2
     <a>advertise with us</a>
     <a href="/outings">exacta outings →</a>
   </div>
-  <div class="ft-note">&copy; 2026 Exacta Experiences</div>
+  <div class="ft-note">&copy; 2026 paired.la</div>
 </footer>
 
 <script>
 // ── STATE ──
 const TODAY = new Date(2026, 2, 19);
 let calM = TODAY.getMonth(), calY = TODAY.getFullYear();
-let selDate = null, dateMode = 'weekend', calOpen = false;
-let activeBgt = 'all', activeHood = 'all', activeCat = 'all', searchQ = '';
+let rangeStart = null, rangeEnd = null, dateMode = 'weekend', calOpen = false;
+let activeBgts = new Set(['1','2','3','4']), activeHood = 'all', activeCat = 'all', activeTod = 'either';
 let loved = {};
 const EVDATES = ['2026-03-21','2026-03-22','2026-03-28','2026-03-29'];
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -692,52 +820,78 @@ const HOOD_COLORS = {dtla:'#007A7A',losfeliz:'#7C3AED',silverlake:'#0891B2',echo
 const HOOD_LABELS = {all:'all neighborhoods',dtla:'DTLA',losfeliz:'Los Feliz',silverlake:'Silver Lake',echopk:'Echo Park',hollywood:'Hollywood / Melrose',weho:'West Hollywood',venice:'Venice / SM',hifilipino:'Historic Filipinotown'};
 const BGT_LABELS = {1:'under $30',2:'$30–75',3:'$75–150',4:'$150+'};
 
+// Holidays (update year as needed)
+const HOLIDAYS = {
+  mothers: { start: new Date('2026-05-10'), end: new Date('2026-05-10'), label: "Mother's Day weekend", note: "Sun May 10, 2026" },
+  fathers: { start: new Date('2026-06-21'), end: new Date('2026-06-21'), label: "Father's Day weekend", note: "Sun Jun 21, 2026" },
+};
+
 // ── RANKING ──
-// TODO: Replace data-score values with live scores from review system.
-// Formula: score = base(100 for recurring, 0 for dated) + (avg_stars * 15) + (review_count * 5)
-// On page load, sort .ec elements in #elist by data-score descending.
-// Featured/promoted cards always stay at top (data-score="999").
-// One-time events (data-end < 90 days from today) sorted by proximity to today instead.
 function sortCardsByScore() {
   const list = document.getElementById('elist');
   const cards = Array.from(list.querySelectorAll('[data-score]'));
   cards.sort((a, b) => parseInt(b.dataset.score) - parseInt(a.dataset.score));
   cards.forEach(c => list.appendChild(c));
-  // Keep no-res at end
   list.appendChild(document.getElementById('no-res'));
 }
 sortCardsByScore();
 
-// ── CALENDAR ──
+// ── CALENDAR (range picker) ──
 function pad(n) { return String(n).padStart(2,'0'); }
 function toKey(y,m,d) { return `${y}-${pad(m+1)}-${pad(d)}`; }
+function keyToDate(key) { return new Date(key+'T12:00:00'); }
+
 function renderCal() {
   const first = new Date(calY,calM,1).getDay(), days = new Date(calY,calM+1,0).getDate();
-  let h = `<div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+  let h = `<div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
     <button onclick="chM(-1)" style="background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:18px;">‹</button>
     <span style="font-size:14px;font-weight:500;color:#fff;">${MONTHS[calM]} ${calY}</span>
     <button onclick="chM(1)" style="background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:18px;">›</button>
   </div>`;
+  h += `<div style="grid-column:1/-1;font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:6px;text-align:center;">${rangeStart&&rangeEnd ? fmt(keyToDate(rangeStart))+' → '+fmt(keyToDate(rangeEnd)) : rangeStart ? fmt(keyToDate(rangeStart))+' — pick end date' : 'tap a start date'}</div>`;
   DAYS.forEach(d => { h += `<div style="text-align:center;font-size:11px;color:rgba(255,255,255,0.3);padding:3px 0;">${d}</div>`; });
   for (let i = 0; i < first; i++) h += `<div></div>`;
   for (let d = 1; d <= days; d++) {
     const key = toKey(calY,calM,d);
+    const dt = keyToDate(key);
     const isTod = calY===TODAY.getFullYear()&&calM===TODAY.getMonth()&&d===TODAY.getDate();
-    const isSel = selDate===key, hasEv = EVDATES.includes(key);
-    const bg = isSel?'background:var(--gold);color:var(--ink);font-weight:700;':isTod?'background:rgba(201,168,76,0.2);color:var(--gold);':'color:rgba(255,255,255,0.6);';
+    const isStart = rangeStart===key, isEnd = rangeEnd===key;
+    const inRange = rangeStart&&rangeEnd && dt>=keyToDate(rangeStart) && dt<=keyToDate(rangeEnd);
+    const hasEv = EVDATES.includes(key);
+    let bg = '';
+    if(isStart||isEnd) bg='background:var(--gold);color:var(--ink);font-weight:700;';
+    else if(inRange) bg='background:rgba(201,168,76,0.25);color:rgba(255,255,255,0.9);';
+    else if(isTod) bg='background:rgba(201,168,76,0.15);color:var(--gold);';
+    else bg='color:rgba(255,255,255,0.6);';
     h += `<div onclick="pickDay('${key}')" style="text-align:center;font-size:13px;${bg}padding:5px 0;border-radius:6px;cursor:pointer;">${d}${hasEv?`<div style="width:4px;height:4px;background:var(--teal);border-radius:50%;margin:1px auto 0;"></div>`:`<div style="height:5px;"></div>`}</div>`;
   }
   document.getElementById('cal-g').innerHTML = h;
 }
+
+function fmt(dt) { return dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
+
 function chM(d) { calM += d; if(calM>11){calM=0;calY++;} if(calM<0){calM=11;calY--;} renderCal(); }
+
 function pickDay(key) {
-  selDate = key; dateMode = 'specific'; renderCal();
-  const dt = new Date(key+'T12:00:00');
-  document.getElementById('ds-res').innerHTML = `<strong>${dt.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}</strong>`;
+  if(!rangeStart || (rangeStart && rangeEnd)) {
+    // start fresh range
+    rangeStart = key; rangeEnd = null;
+  } else {
+    // set end — ensure start <= end
+    if(keyToDate(key) < keyToDate(rangeStart)) { rangeEnd = rangeStart; rangeStart = key; }
+    else rangeEnd = key;
+  }
+  dateMode = 'range'; renderCal();
   document.getElementById('clr').style.display = 'inline';
   document.querySelectorAll('.ds-btn').forEach(b => b.classList.remove('active'));
-  applyF();
+  if(rangeStart && rangeEnd) {
+    document.getElementById('ds-res').innerHTML = `<strong>${fmt(keyToDate(rangeStart))} – ${fmt(keyToDate(rangeEnd))}</strong>`;
+    applyF();
+  } else {
+    document.getElementById('ds-res').innerHTML = `<span style="color:rgba(255,255,255,0.5)">now pick an end date</span>`;
+  }
 }
+
 function togCal(btn) {
   calOpen = !calOpen;
   document.getElementById('cal-out').classList.toggle('show', calOpen);
@@ -745,8 +899,9 @@ function togCal(btn) {
   document.querySelectorAll('.ds-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
+
 function selM(btn, mode) {
-  dateMode = mode; selDate = null; calOpen = false;
+  dateMode = mode; rangeStart = null; rangeEnd = null; calOpen = false; activeHoliday = null;
   document.getElementById('cal-out').classList.remove('show');
   document.querySelectorAll('.ds-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -754,8 +909,24 @@ function selM(btn, mode) {
   document.getElementById('ds-res').innerHTML = mode==='weekend'?'<strong>Sat Mar 21 + Sun Mar 22</strong>':'<span style="color:rgba(255,255,255,0.4)">showing all experiences</span>';
   applyF();
 }
+
+let activeHoliday = null;
+
+function selHoliday(btn, key) {
+  const h = HOLIDAYS[key]; if(!h) return;
+  activeHoliday = key;
+  dateMode = 'holiday';
+  rangeStart = null; rangeEnd = null; calOpen = false;
+  document.getElementById('cal-out').classList.remove('show');
+  document.querySelectorAll('.ds-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('clr').style.display = 'inline';
+  document.getElementById('ds-res').innerHTML = `<strong>${h.label}</strong> <span style="color:rgba(255,255,255,0.4);font-size:12px;">${h.note}</span>`;
+  applyF();
+}
+
 function clrD() {
-  selDate = null; dateMode = 'any'; calOpen = false;
+  rangeStart = null; rangeEnd = null; dateMode = 'any'; calOpen = false; activeHoliday = null;
   document.getElementById('cal-out').classList.remove('show');
   document.getElementById('clr').style.display = 'none';
   document.getElementById('ds-res').innerHTML = '';
@@ -764,10 +935,29 @@ function clrD() {
   applyF();
 }
 
+function doSearch() {} // removed — kept stub so no reference errors
+
 // ── FILTERS ──
-function setBgt(btn, val) {
-  activeBgt = val;
-  document.querySelectorAll('.bb-btn').forEach(b => b.classList.remove('active'));
+function toggleBgt(btn, val) {
+  if(activeBgts.has(val)) {
+    if(activeBgts.size===1) return;
+    activeBgts.delete(val);
+    btn.classList.remove('active');
+  } else {
+    activeBgts.add(val);
+    btn.classList.add('active');
+  }
+  applyF();
+}
+function setBgt(btn, val) { toggleBgt(btn, val); }
+function setBgtAll() {
+  activeBgts = new Set(['1','2','3','4']);
+  document.querySelectorAll('.bb-btn').forEach(b=>b.classList.add('active'));
+  applyF();
+}
+function setTod(btn, val) {
+  activeTod = val;
+  ['tod-day','tod-night','tod-either'].forEach(id=>{ const el=document.getElementById(id); if(el)el.classList.remove('active'); });
   btn.classList.add('active');
   applyF();
 }
@@ -803,12 +993,6 @@ function setHoodAll() {
   all.classList.add('active'); all.style.background='var(--teal)'; all.style.color='#fff'; all.style.borderColor='var(--teal)';
   applyF();
 }
-function setBgtAll() {
-  activeBgt = 'all';
-  document.querySelectorAll('.bb-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.bb-btn')[0].classList.add('active');
-  applyF();
-}
 
 function applyF() {
   const cards = document.querySelectorAll('[data-date]');
@@ -818,24 +1002,50 @@ function applyF() {
     const cd = new Date(c.dataset.date+'T12:00:00');
     const ce = c.dataset.end ? new Date(c.dataset.end+'T12:00:00') : cd;
     const cb = parseInt(c.dataset.budget), ch = c.dataset.hood || '';
-    const txt = c.textContent.toLowerCase();
-    let dOk=true, bOk=true, hOk=true, sOk=true;
+    const ct = c.dataset.time || 'either';
+    let dOk=true, bOk=true, hOk=true, tOk=true;
     if(dateMode==='weekend') dOk = cd<=WE && ce>=WS;
-    else if(dateMode==='specific'&&selDate){ const sd=new Date(selDate+'T12:00:00'); dOk=cd<=sd&&ce>=sd; }
-    if(activeBgt!=='all') bOk = cb===parseInt(activeBgt);
+    else if(dateMode==='range' && rangeStart && rangeEnd) {
+      const rs=keyToDate(rangeStart), re=keyToDate(rangeEnd);
+      dOk = cd<=re && ce>=rs;
+    } else if(dateMode==='holiday' && activeHoliday) {
+      const hol = HOLIDAYS[activeHoliday];
+      dOk = cd<=hol.end && ce>=hol.start;
+    }
+    bOk = activeBgts.has(String(cb));
     if(activeHood!=='all') hOk = ch===activeHood;
-    if(searchQ) sOk = txt.includes(searchQ);
-    c.classList.toggle('hc', !dOk||!bOk||!hOk||!sOk);
-    if(dOk&&bOk&&hOk&&sOk) vis++;
+    // Time of day: night mode hides day-only cards; day mode hides night-only cards
+    if(activeTod==='night') tOk = ct==='night' || ct==='either';
+    else if(activeTod==='day') tOk = ct==='day' || ct==='either';
+    c.classList.toggle('hc', !dOk||!bOk||!hOk||!tOk);
+    if(dOk&&bOk&&hOk&&tOk) vis++;
   });
   document.getElementById('no-res').classList.toggle('hidden', vis>0);
-  const dateLabel = {weekend:'this weekend',any:'all experiences',specific:selDate?new Date(selDate+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}):''};
+  const dateLabel = {
+    weekend:'this weekend', any:'all experiences',
+    range: rangeStart&&rangeEnd ? fmt(keyToDate(rangeStart))+' – '+fmt(keyToDate(rangeEnd)) : 'date range',
+    holiday:'holiday weekend'
+  };
   const hoodPart = activeHood!=='all' ? ` · ${HOOD_LABELS[activeHood]}` : '';
-  document.getElementById('res-title').textContent = (dateLabel[dateMode]||'experiences') + hoodPart;
+  const todPart = activeTod!=='either' ? ` · ${activeTod}` : '';
+  document.getElementById('res-title').textContent = (dateLabel[dateMode]||'experiences') + hoodPart + todPart;
   document.getElementById('res-count').textContent = vis + ' experience' + (vis!==1?'s':'');
   const chips = [];
   if(activeHood!=='all') chips.push({label:'× '+HOOD_LABELS[activeHood], fn:'setHoodAll()'});
-  if(activeBgt!=='all') chips.push({label:'× budget: '+BGT_LABELS[activeBgt], fn:'setBgtAll()'});
+  if(activeBgts.size < 4) chips.push({label:'× budget filter', fn:'setBgtAll()'});
+  if(activeTod!=='either') chips.push({label:'× '+activeTod+' only', fn:"setTod(document.getElementById('tod-either'),'either')"});
+  document.getElementById('active-filters').innerHTML = chips.map(ch=>`<div class="af-chip" onclick="${ch.fn}">${ch.label}</div>`).join('');
+}
+  document.getElementById('no-res').classList.toggle('hidden', vis>0);
+  const dateLabel = {weekend:'this weekend',any:'all experiences',specific:selDate?new Date(selDate+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}):''};
+  const hoodPart = activeHood!=='all' ? ` · ${HOOD_LABELS[activeHood]}` : '';
+  const todPart = activeTod!=='either' ? ` · ${activeTod}` : '';
+  document.getElementById('res-title').textContent = (dateLabel[dateMode]||'experiences') + hoodPart + todPart;
+  document.getElementById('res-count').textContent = vis + ' experience' + (vis!==1?'s':'');
+  const chips = [];
+  if(activeHood!=='all') chips.push({label:'× '+HOOD_LABELS[activeHood], fn:'setHoodAll()'});
+  if(activeBgts.size < 4) chips.push({label:'× budget filter', fn:'setBgtAll()'});
+  if(activeTod!=='either') chips.push({label:'× '+activeTod+' only', fn:"setTod(document.getElementById('tod-either'),'either')"});
   document.getElementById('active-filters').innerHTML = chips.map(ch=>`<div class="af-chip" onclick="${ch.fn}">${ch.label}</div>`).join('');
 }
 applyF();
@@ -950,6 +1160,623 @@ function showDet(id) {
 function tgLDet(id, title, hood, pair) {
   if(loved[id]) { delete loved[id]; } else { loved[id]={title,hood,pair}; }
   document.getElementById('lc').textContent = Object.keys(loved).length;
+}
+
+// ── BUILD YOUR OWN ──
+let byoState = { vibe:null, interests:[], budgets:['1','2','3','4'] };
+
+function setVibe(vibe, el) {
+  byoState.vibe = vibe;
+  document.querySelectorAll('.vibe-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  setTimeout(()=>showStep(2), 280);
+}
+
+function toggleInt(el, val) {
+  el.classList.toggle('active');
+  if(byoState.interests.includes(val)) {
+    byoState.interests = byoState.interests.filter(x=>x!==val);
+  } else {
+    byoState.interests.push(val);
+  }
+}
+
+function toggleBudget(el, val) {
+  el.classList.toggle('active');
+  if(byoState.budgets.includes(val)) {
+    byoState.budgets = byoState.budgets.filter(x=>x!==val);
+    if(byoState.budgets.length===0) {
+      el.classList.add('active');
+      byoState.budgets = [val];
+    }
+  } else {
+    byoState.budgets.push(val);
+  }
+}
+
+function generateByo() {
+  const { vibe, budgets } = byoState;
+  if(!vibe) return;
+  // Pick lowest selected budget tier that has a package
+  const sorted = ['1','2','3','4'].filter(b=>budgets.includes(b));
+  let pkg = null, chosenBudget = null;
+  for(const b of sorted) {
+    if(PACKAGES[vibe]?.[b]) { pkg = PACKAGES[vibe][b]; chosenBudget=b; break; }
+  }
+  if(!pkg) return;
+  selSwap = null;
+  renderByoResult(pkg, vibe, chosenBudget);
+}
+
+// Keep old setBudget for backward compat but now unused
+function setBudget(budget, el) {
+  byoState.budgets = [budget];
+  document.querySelectorAll('.bud-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  setTimeout(()=>generateByo(), 320);
+}
+
+function showStep(n) {
+  [1,2,3].forEach(i=>{
+    const el=document.getElementById('byo-step-'+i);
+    if(el) el.style.display = i===n?'block':'none';
+  });
+  document.getElementById('byo-result').style.display='none';
+  window.scrollTo(0,0);
+}
+
+// DATE NIGHT is evening-only — these packages reflect that
+// All other vibes have day/evening mix
+
+function renderByoResult(pkg, vibe, budget) {
+  [1,2,3].forEach(i=>{ const el=document.getElementById('byo-step-'+i); if(el)el.style.display='none'; });
+
+  const dotClass = d => ({ gold:'pkg-dot-gold', teal:'pkg-dot-teal', rose:'pkg-dot-rose', purple:'pkg-dot-purple' }[d]||'pkg-dot-gold');
+  const badgeHtml = b => {
+    if(!b) return '';
+    const cls = b==='free'?'badge-free':b==='dessert'?'badge-dessert':'badge-addon';
+    return `<span class="pkg-item-badge ${cls}">${b==='free add-on'?'free add-on':b}</span>`;
+  };
+
+  const items = pkg.items.map(item=>
+    `<div class="pkg-item">
+      <div class="pkg-dot ${dotClass(item.dot)}"></div>
+      <div>
+        <div class="pkg-item-main">${item.t}</div>
+        <div class="pkg-item-sub">${item.s}</div>
+        ${badgeHtml(item.badge)}
+      </div>
+    </div>`
+  ).join('');
+
+  // Filter main page cards that match this vibe's context
+  const vibeHoods = {
+    morning:['DTLA','Silver Lake','Santa Monica','Venice','Hollywood'],
+    date:['Los Feliz','West Hollywood','DTLA Arts District','Silver Lake'],
+    dinner:['Echo Park','Melrose','DTLA Arts District'],
+    friends:['Hollywood','Venice','Koreatown','DTLA'],
+    culture:['DTLA','Mid-Wilshire','West Hollywood','Westwood'],
+    outdoor:['Venice','Santa Monica','Malibu','Los Feliz'],
+    comedy:['Hollywood','Melrose','West Hollywood'],
+    local:['Echo Park','Silver Lake','Los Feliz','Historic Filipinotown'],
+  };
+  const relevantHoods = vibeHoods[vibe]||[];
+
+  // Pull matching cards from main list by data attributes
+  const allCards = Array.from(document.querySelectorAll('#elist .ec, #elist .promoted-card'))
+    .filter(c=>{
+      const hood = c.dataset.hood||'';
+      return relevantHoods.some(h=>hood===h||c.innerHTML.toLowerCase().includes(h.toLowerCase()));
+    }).slice(0,4);
+
+  const moreCardsHtml = allCards.length>0 ? `
+    <div style="margin-top:1.75rem;">
+      <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.8px;font-weight:500;color:var(--teal);margin-bottom:12px;">more ideas you might like</div>
+      <div style="display:flex;flex-direction:column;gap:10px;" id="byo-more-cards">
+        ${allCards.map(c=>{
+          const title = c.querySelector('.ei-title')?.textContent||'';
+          const pair = c.querySelector('.ei-pair')?.textContent||'';
+          const hood = c.querySelector('.ei-hood')?.textContent||'';
+          const tags = Array.from(c.querySelectorAll('.tag')).slice(0,3).map(t=>`<span class="tag">${t.textContent}</span>`).join('');
+          const bud = c.querySelector('.er')?.innerHTML.match(/\$[^<]*/)?.[0]||'';
+          return `<div class="ec" style="cursor:pointer;" onclick="this.querySelector('.vbtn')?.click()">
+            <div class="edb"><div class="edb-star">★</div><div class="edb-month">paired.la</div></div>
+            <div>
+              <div class="ei-hood">${hood}</div>
+              <div class="ei-title">${title}</div>
+              <div class="ei-pair">${pair}</div>
+              <div class="ei-meta">${tags}</div>
+            </div>
+            <div class="er">
+              <span style="font-size:13px;font-weight:600;color:var(--muted);">${bud}</span>
+              <button class="vbtn" style="font-size:11px;padding:5px 10px;">view</button>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div style="margin-top:14px;">
+        <button onclick="showV('home')" style="background:none;border:0.5px solid var(--bdr);color:var(--muted);padding:9px 20px;border-radius:8px;font-size:13px;cursor:pointer;font-family:var(--font);">see all pairings →</button>
+      </div>
+    </div>` : '';
+
+  const result = document.getElementById('byo-result');
+  result.style.display = 'block';
+  result.innerHTML = `
+    <div class="pkg-card">
+      <div class="pkg-hdr">
+        <span class="pkg-hdr-name">${pkg.name}</span>
+        <span class="pkg-hdr-bud">${pkg.bud}</span>
+      </div>
+      <div class="pkg-body">${items}</div>
+      <div class="pkg-footer">
+        <button class="pkg-save" onclick="saveByo()">save this pairing</button>
+        <button class="pkg-restart" onclick="restartByo()">start over</button>
+      </div>
+    </div>
+    <div class="swap-section">
+      <div class="swap-hdr">want to swap one item?</div>
+      <div class="swap-sub-txt">a few alternatives that pair well with this vibe</div>
+      <div class="swap-opts" id="swap-opts"></div>
+      <div class="swap-updated" id="swap-updated"></div>
+    </div>
+    ${moreCardsHtml}`;
+
+  renderSwapOpts(pkg.swaps);
+  result.scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+const PACKAGES = {
+  morning:{
+    '1':{name:'perfect cheap morning',bud:'$ under $30',items:[
+      {t:'LA Flower Market — Mon–Sat from 6am',s:'754 Wall St, DTLA · $2 entry · largest flower market in the US',dot:'gold'},
+      {t:'G&B Coffee at Grand Central Market',s:'317 S Broadway · 5 min walk · one of the best espresso programs in DTLA',dot:'teal'},
+      {t:'Walk the Arts District murals',s:'free · 15–30 min · some of the best street art in LA',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Silver Lake Farmers Market',meta:'Sat 8am–1:30pm · Silver Lake · free',rec:true},
+      {id:'s2',name:'Menotti\'s Coffee Stop',meta:'Venice Boardwalk · $ · tiny, perfect cortado'},
+      {id:'s3',name:'Dinosaur Coffee',meta:'Silver Lake / Fountain Ave · $ · best cortado in SL'},
+      {id:'s4',name:'Venice Canals walk',meta:'free · hidden gem, 2 blocks from the boardwalk'},
+    ]},
+    '2':{name:'classic LA morning',bud:'$$ $30–75',items:[
+      {t:'Santa Monica Farmers Market',s:'Arizona Ave at 3rd · Sat 8am–1pm · 160+ vendors, best produce market in LA',dot:'gold'},
+      {t:'Beach walk toward Venice',s:'free · 45 min stroll along the coast · Palisades Park bluffs optional',dot:'teal',badge:'free'},
+      {t:'Gjusta Venice',s:'320 Sunset Ave · $$ · lox plate or egg sandwich · the gold standard',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'La La Land Coffee',meta:'multiple locations · $ · rose latte is the signature',rec:true},
+      {id:'s2',name:'Republique brunch',meta:'624 S La Brea · $$$ · French-Californian · reserve ahead'},
+      {id:'s3',name:'Sqirl',meta:'Silver Lake · $$ · sorrel pesto rice bowl is iconic'},
+      {id:'s4',name:'Descanso Gardens',meta:'La Cañada · $ · 150 acres of gardens'},
+    ]},
+    '3':{name:'active LA morning',bud:'$$$ $75–150',items:[
+      {t:'Temescal Canyon hike',s:'Pacific Palisades · free · waterfall + ocean views · far less crowded than Runyon',dot:'teal',badge:'free'},
+      {t:'Brunch at Gjusta Venice',s:'320 Sunset Ave · $$ · lox plate is unmissable · walk-in',dot:'gold'},
+      {t:'Walk Abbot Kinney Blvd',s:'free · browse Venice\'s most local street after brunch',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Republique brunch',meta:'Mid-City · $$$ · pain au chocolat is legendary',rec:true},
+      {id:'s2',name:'Griffith Park trails',meta:'free · 50+ miles, largest urban park in the US'},
+      {id:'s3',name:'Runyon Canyon hike',meta:'free · accessible from Hollywood, great city views'},
+      {id:'s4',name:'Point Dume State Beach hike',meta:'Malibu · free · hidden cove below the headland'},
+    ]},
+    '4':{name:'luxury morning',bud:'$$$$ special occasion',items:[
+      {t:'Sunrise at Griffith Observatory',s:'free · go by 6am for empty trails and the best views · drives-only before DASH opens',dot:'teal',badge:'free'},
+      {t:'Brunch at Nobu Malibu',s:'22706 PCH · $$$$ · oceanfront, black cod with miso · reserve far ahead',dot:'gold'},
+      {t:'Walk PCH and El Matador Beach',s:'free · dramatic cliffs and coves, wildflowers in spring',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Gjusta Venice brunch',meta:'Venice · $$ · the locals\' alternative to Nobu',rec:true},
+      {id:'s2',name:'Descanso Gardens',meta:'La Cañada · $ · peaceful 150-acre botanical garden'},
+      {id:'s3',name:'Malibu Farm brunch',meta:'Malibu Pier · $$$ · oceanfront, farm-to-table'},
+      {id:'s4',name:'Getty Center',meta:'Brentwood · free · world-class art + views of LA'},
+    ]},
+  },
+  date:{
+    '1':{name:'romantic evening stroll',bud:'$ under $30',items:[
+      {t:'Silver Lake Farmers Market',s:'Sunset Triangle Plaza · Sat 8am–1:30pm · free · vintage, vinyl, mushrooms',dot:'gold',badge:'free'},
+      {t:'La La Land Coffee',s:'Fountain Ave, Silver Lake · $ · rose latte for two · outdoor patio',dot:'teal'},
+      {t:'Silver Lake Reservoir walk',s:'free · 2.2 miles · beautiful views · very local',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Greystone Mansion grounds',meta:'Beverly Hills · free · 1928 Tudor estate, almost no tourists',rec:true},
+      {id:'s2',name:'Dinosaur Coffee',meta:'Silver Lake · $ · best cortado in the neighborhood'},
+      {id:'s3',name:'Griffith Park trails',meta:'free · continue the morning with a hike'},
+      {id:'s4',name:'Bar Covell natural wine',meta:'Los Feliz · $$ · candlelit, romantic, walk-in'},
+    ]},
+    '2':{name:'romantic afternoon',bud:'$$ $30–75',items:[
+      {t:'Hauser & Wirth DTLA',s:'901 E 3rd St · free · world-class gallery · Norton Collection thru Aug 2026',dot:'teal',badge:'free'},
+      {t:'Arts District mural walk',s:'free · walk between gallery and dinner · 15–20 min',dot:'teal',badge:'free'},
+      {t:'Dinner at Manuela',s:'onsite at H&W · $$ · farm-to-table · reserve ahead',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Dinner at Bestia',meta:'DTLA Arts District · $$$ · most celebrated in LA · reserve weeks ahead',rec:true},
+      {id:'s2',name:'Everson Royce Bar',meta:'DTLA Arts District · $ · $12 cocktails · right outside H&W'},
+      {id:'s3',name:'Bar Covell natural wine',meta:'Los Feliz · $$ · candlelit, intimate, romantic'},
+      {id:'s4',name:'Perch rooftop bar',meta:'DTLA · $$ · panoramic views · happy hour 4–7pm'},
+    ]},
+    '3':{name:'romantic evening',bud:'$$$ $75–150',items:[
+      {t:'Greystone Mansion grounds walk',s:'905 Loma Vista Dr, Beverly Hills · free · open until 5pm · 1928 Tudor estate',dot:'purple',badge:'free add-on'},
+      {t:'Dinner at Gracias Madre',s:'8905 Melrose Ave, WeHo · $$ · plant-based Mexican · excellent margaritas · beautiful patio',dot:'gold'},
+      {t:'Nightcap at Bar Covell',s:'Los Feliz · $$ · candlelit natural wine bar · walk-in · perfect close to the evening',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Dinner at Jon & Vinny\'s',meta:'Fairfax · $$ · best casual Italian in LA',rec:true},
+      {id:'s2',name:'Hauser & Wirth WeHo gallery',meta:'free · Gorky "Horizon West" thru Apr 25'},
+      {id:'s3',name:'Griffith Observatory at sunset',meta:'free · then Uber to Mírate bar in Los Feliz'},
+      {id:'s4',name:'Perch rooftop bar',meta:'DTLA · $$ · panoramic city views'},
+    ]},
+    '4':{name:'ultimate romantic night',bud:'$$$$ special occasion',items:[
+      {t:'Pre-show happy hour at Perch DTLA',s:'448 S Hill St · $10 cocktails · panoramic views · 4–7pm',dot:'teal'},
+      {t:'Dinner at Otium',s:'222 S Hope St · $$$ · next to Walt Disney Concert Hall · reserve ahead',dot:'gold'},
+      {t:'Vertigo live at LA Philharmonic',s:'$99+ · Hitchcock on screen, Bernard Herrmann score performed live · unforgettable',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Dinner at Bestia',meta:'DTLA Arts District · $$$ · reserve 2–3 weeks ahead',rec:true},
+      {id:'s2',name:'Dinner at Republique',meta:'Mid-City · $$$ · French-Californian, one of LA\'s best'},
+      {id:'s3',name:'The Magic Castle',meta:'Hollywood · $$$$ · members or hotel guests only · the most unique evening in LA'},
+      {id:'s4',name:'Nobu Malibu dinner',meta:'Malibu · $$$$ · oceanfront · black cod with miso'},
+    ]},
+  },
+  dinner:{
+    '1':{name:'dinner and a free walk',bud:'$ under $30',items:[
+      {t:'Dinner at Cosa Buona',s:'2100 W Sunset Blvd, Echo Park · $ · best thin-crust pizza in EP · reserve ahead',dot:'gold'},
+      {t:'Churros at El Moro Churrerìa',s:'3300 W Sunset · $ · fresh churros + chocolate sauce · eat outside',dot:'rose',badge:'dessert'},
+      {t:'Echo Park Lake walk',s:'free · golden hour · very local, no tourists',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Langer\'s Deli',meta:'Westlake · $ · #19 pastrami on rye · best deli in America',rec:true},
+      {id:'s2',name:'Yuca\'s tacos',meta:'Los Feliz · $ · cash only · James Beard Award winning taco stand'},
+      {id:'s3',name:'Short Stop bar',meta:'Echo Park · $ · the Dodgers bar · happy hour 4–8pm'},
+      {id:'s4',name:'Arts District mural walk',meta:'free · 15–30 min · best street art in LA'},
+    ]},
+    '2':{name:'dinner and a show',bud:'$$ $30–75',items:[
+      {t:'Dinner at Jon & Vinny\'s',s:'412 N Fairfax Ave · $$ · best casual Italian in LA · bar is walk-in',dot:'gold'},
+      {t:'The Groundlings show',s:'7307 Melrose Ave · $20–45 · Thu–Sun · trained Wiig, Rudolph, Ferrell, McCarthy',dot:'teal'},
+      {t:'Late drinks on Melrose',s:'Canter\'s Deli open until 4am, or nearby bar of choice',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Republique dinner',meta:'Mid-City · $$$ · one of LA\'s best · reserve ahead',rec:true},
+      {id:'s2',name:'Gracias Madre dinner',meta:'West Hollywood · $$ · plant-based Mexican, excellent margaritas'},
+      {id:'s3',name:'Largo at the Coronet',meta:'WeHo · $$ · most intimate music/comedy venue in LA'},
+      {id:'s4',name:'Everson Royce Bar',meta:'DTLA Arts District · $ · $12 cocktails, great burger'},
+    ]},
+    '3':{name:'dinner and a gallery',bud:'$$$ $75–150',items:[
+      {t:'Hauser & Wirth DTLA',s:'901 E 3rd St · free · open until 6pm Tue–Sun · world-class art',dot:'teal',badge:'free'},
+      {t:'Arts District mural walk',s:'free · walk from gallery to dinner · 10 min',dot:'teal',badge:'free'},
+      {t:'Dinner at Bestia',s:'2036 E 7th St · $$$ · one of the most celebrated in LA · reserve 2–3 weeks',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Dinner at Manuela (onsite)',meta:'$$ · farm-to-table · you don\'t even leave H&W',rec:true},
+      {id:'s2',name:'Dinner at Otium',meta:'DTLA · $$$ · next to Concert Hall'},
+      {id:'s3',name:'Perch rooftop happy hour',meta:'DTLA · $$ · panoramic views · 4–7pm'},
+      {id:'s4',name:'Everson Royce Bar',meta:'Arts District · $ · $12 cocktails · right nearby'},
+    ]},
+    '4':{name:'dinner and the symphony',bud:'$$$$ special occasion',items:[
+      {t:'Happy hour at Perch DTLA',s:'448 S Hill St · $10 cocktails · panoramic city views · 4–7pm',dot:'teal'},
+      {t:'Dinner at Otium',s:'222 S Hope St, DTLA · $$$ · reserve ahead · right next to Concert Hall',dot:'gold'},
+      {t:'LA Philharmonic at Walt Disney Concert Hall',s:'from $50 · one of the greatest concert halls in the world',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Dinner at Bestia',meta:'Arts District · $$$ · reserve 2–3 weeks ahead · best in LA',rec:true},
+      {id:'s2',name:'Dinner at Republique',meta:'Mid-City · $$$ · French-Californian, consistently excellent'},
+      {id:'s3',name:'Pre-dinner at Musso & Frank',meta:'Hollywood · $$$ · oldest restaurant in Hollywood, since 1919'},
+      {id:'s4',name:'Perch rooftop pre-drinks',meta:'DTLA · $$ · panoramic views of downtown'},
+    ]},
+  },
+  friends:{
+    '1':{name:'cheap friends day out',bud:'$ under $30',items:[
+      {t:'Hollywood Farmers Market',s:'Ivar Ave · Sun 8am–1pm · free · 160+ vendors',dot:'gold',badge:'free'},
+      {t:'La La Land Coffee',s:'nearby Fountain Ave location · $ · grab seats, catch up',dot:'teal'},
+      {t:'Groundlings Sunday matinee',s:'7307 Melrose Ave · $20–25 · Sunday Company proving ground for future stars',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Everson Royce Bar',meta:'Arts District · $ · $12 cocktails + great burger',rec:true},
+      {id:'s2',name:'Short Stop bar',meta:'Echo Park · $ · great dive, $4 PBR, happy hour 4–8pm'},
+      {id:'s3',name:'Bar Covell natural wine',meta:'Los Feliz · $$ · excellent natural wine list'},
+      {id:'s4',name:'Echo Park Lake walk',meta:'free · local, no tourists · rideshare recommended'},
+    ]},
+    '2':{name:'fun friends afternoon',bud:'$$ $30–75',items:[
+      {t:'Santa Monica Farmers Market',s:'Arizona Ave · Sat 8am–1pm · free · best produce market in LA',dot:'gold',badge:'free'},
+      {t:'Beach walk toward Venice',s:'free · 45 min stroll · very LA',dot:'teal',badge:'free'},
+      {t:'Lunch at Gjusta Venice',s:'320 Sunset Ave · $$ · walk-in · order at the counter',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Gjelina dinner',meta:'Abbot Kinney · $$$ · best patio in Venice',rec:true},
+      {id:'s2',name:'Vandell bar',meta:'Los Feliz · $$ · Old Fashioneds that make you a believer'},
+      {id:'s3',name:'Mírate bar',meta:'Los Feliz · $$ · #12 North America · Best Bar in the West'},
+      {id:'s4',name:'Thunderbolt bar',meta:'Historic Filipinotown · $$ · #24 North America'},
+    ]},
+    '3':{name:'friends night out',bud:'$$$ $75–150',items:[
+      {t:'Happy hour at Perch DTLA',s:'448 S Hill St · $10 cocktails · panoramic views · 4–7pm',dot:'teal'},
+      {t:'Dodgers or Lakers game',s:'Dodger Stadium or Crypto.com Arena · $50–100 StubHub · the full LA experience',dot:'gold'},
+      {t:'Post-game at Grand Central Market',s:'$15–20 · 107 vendors · walk from arena or stadium',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Mírate bar',meta:'Los Feliz · $$ · #12 North America · Best Bar in the West',rec:true},
+      {id:'s2',name:'Thunderbolt bar',meta:'Historic Filipinotown · $$ · #24 North America'},
+      {id:'s3',name:'The Groundlings show',meta:'Melrose · $$ · trained Wiig, Rudolph, Ferrell'},
+      {id:'s4',name:'Vandell bar',meta:'Los Feliz · $$ · buzzy, great cocktails'},
+    ]},
+    '4':{name:'legendary friends night',bud:'$$$$ special occasion',items:[
+      {t:'Dinner at Bestia',s:'2036 E 7th St, Arts District · $$$ · reserve weeks ahead · the celebration restaurant',dot:'gold'},
+      {t:'LA Philharmonic at Walt Disney Concert Hall',s:'from $50 · iconic venue · check schedule for best shows',dot:'gold'},
+      {t:'Nightcap at Cole\'s DTLA',s:'oldest bar in LA · $12–18 drinks · perfect close to a big night',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Republique dinner',meta:'Mid-City · $$$ · French-Californian · one of LA\'s best',rec:true},
+      {id:'s2',name:'Nobu Malibu dinner',meta:'Malibu · $$$$ · oceanfront · black cod with miso'},
+      {id:'s3',name:'Largo at the Coronet',meta:'WeHo · $$ · most intimate music venue in LA'},
+      {id:'s4',name:'The Magic Castle',meta:'Hollywood · $$$$ · members or hotel guests only'},
+    ]},
+  },
+  culture:{
+    '1':{name:'culture on a budget',bud:'$ under $30',items:[
+      {t:'Hauser & Wirth DTLA',s:'901 E 3rd St · free · always · Norton Collection thru Aug 2026',dot:'teal',badge:'free'},
+      {t:'Arts District mural walk',s:'free · Traction Ave east of H&W · 15–30 min',dot:'teal',badge:'free'},
+      {t:'G&B Coffee at Grand Central Market',s:'317 S Broadway · $ · 5 min walk · best espresso in DTLA',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'The Broad museum',meta:'DTLA · free (reserve) · best contemporary collection in LA',rec:true},
+      {id:'s2',name:'The Last Bookstore',meta:'DTLA · free · book tunnel is iconic · 10 min walk'},
+      {id:'s3',name:'LACMA',meta:'Mid-Wilshire · $25 · Urban Light at dusk is a must'},
+      {id:'s4',name:'Hammer Museum',meta:'Westwood · free · forward-thinking contemporary art'},
+    ]},
+    '2':{name:'gallery + dinner day',bud:'$$ $30–75',items:[
+      {t:'Hauser & Wirth WeHo — Gorky show',s:'9044 Melrose Ave · free · thru Apr 25 · abstract landscapes',dot:'teal',badge:'free'},
+      {t:'Greystone Mansion walk',s:'905 Loma Vista Dr, Beverly Hills · free · 5 min from WeHo · 1928 Tudor estate',dot:'purple',badge:'free add-on'},
+      {t:'Dinner at Gracias Madre',s:'8905 Melrose Ave · $$ · plant-based Mexican · excellent margaritas',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'The Broad museum',meta:'DTLA · free (reserve) · Kusama Infinity Room is here',rec:true},
+      {id:'s2',name:'Hauser & Wirth DTLA',meta:'free · Norton Collection, thru Aug 2026'},
+      {id:'s3',name:'LACMA',meta:'Mid-Wilshire · $25 · Urban Light at dusk is magic'},
+      {id:'s4',name:'Hammer Museum',meta:'Westwood · free · consistently excellent contemporary art'},
+    ]},
+    '3':{name:'arts evening out',bud:'$$$ $75–150',items:[
+      {t:'LACMA',s:'5905 Wilshire Blvd · $25 · Urban Light at dusk is one of the great LA photo moments',dot:'teal'},
+      {t:'Dinner at Republique',s:'624 S La Brea Ave · $$$ · 1 min walk · one of LA\'s best · reserve ahead',dot:'gold'},
+      {t:'The Groundlings show',s:'7307 Melrose Ave · $20–45 · Thu–Sun · the best live comedy in LA',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'The Broad museum',meta:'DTLA · free (reserve) · world-class contemporary collection',rec:true},
+      {id:'s2',name:'Getty Center',meta:'Brentwood · free · world-class art + views'},
+      {id:'s3',name:'Largo at the Coronet',meta:'WeHo · $$ · Jon Brion Friday residency is legendary'},
+      {id:'s4',name:'Dinner at Bestia',meta:'DTLA Arts District · $$$ · reserve weeks ahead'},
+    ]},
+    '4':{name:'ultimate culture day',bud:'$$$$ special occasion',items:[
+      {t:'Getty Center',s:'1200 Getty Center Dr · free · world-class European art · Irwin garden · sweeping LA views',dot:'teal',badge:'free'},
+      {t:'Dinner at Bestia',s:'2036 E 7th St, Arts District · $$$ · reserve 2–3 weeks · the real LA special occasion',dot:'gold'},
+      {t:'LA Philharmonic at Walt Disney Concert Hall',s:'from $50 · Frank Gehry\'s masterpiece · check program',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'The Broad museum',meta:'DTLA · free (reserve) · Kusama + Koons + Basquiat',rec:true},
+      {id:'s2',name:'LACMA',meta:'Mid-Wilshire · $25 · largest art museum in the West'},
+      {id:'s3',name:'Nobu Malibu dinner',meta:'Malibu · $$$$ · oceanfront fine dining'},
+      {id:'s4',name:'The Magic Castle',meta:'Hollywood · $$$$ · members/hotel only · most unique evening in LA'},
+    ]},
+  },
+  outdoor:{
+    '1':{name:'cheap outdoor morning',bud:'$ under $30',items:[
+      {t:'Venice boardwalk walk',s:'free · Oceanfront Walk · street performers, Muscle Beach, ocean views',dot:'teal',badge:'free'},
+      {t:'Venice Canals walk',s:'free · Dell Ave · serene, hidden gem 2 blocks from the boardwalk',dot:'teal',badge:'free'},
+      {t:'Menotti\'s Coffee Stop',s:'56 Windward Ave, Venice · $ · tiny window on the boardwalk · perfect cortado',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Gjusta Venice breakfast',meta:'Venice · $$ · lox plate is legendary · walk-in',rec:true},
+      {id:'s2',name:'Santa Monica beach walk or bike',meta:'free · start at SM Pier · bike rentals available'},
+      {id:'s3',name:'Runyon Canyon hike',meta:'free · Hollywood Hills · great city views from the ridge'},
+      {id:'s4',name:'Griffith Park trails',meta:'free · 50+ miles · largest urban park in the US'},
+    ]},
+    '2':{name:'hike + brunch day',bud:'$$ $30–75',items:[
+      {t:'Temescal Canyon hike',s:'Pacific Palisades · free · waterfall + ocean views · far less crowded than Runyon',dot:'teal',badge:'free'},
+      {t:'Brunch at Gjusta Venice',s:'320 Sunset Ave · $$ · lox plate or egg sandwich · walk-in',dot:'gold'},
+      {t:'Walk Abbot Kinney Blvd',s:'free · browse Venice\'s most local street · browse shops after brunch',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Griffith Park trails',meta:'free · 50+ miles, city and mountain views',rec:true},
+      {id:'s2',name:'Runyon Canyon hike',meta:'free · accessible from Hollywood'},
+      {id:'s3',name:'Eaton Canyon Falls hike',meta:'Pasadena · free · 40-foot waterfall · 3 miles RT'},
+      {id:'s4',name:'Solstice Canyon hike',meta:'Malibu · free · waterfall + modernist ruins'},
+    ]},
+    '3':{name:'Malibu outdoor day',bud:'$$$ $75–150',items:[
+      {t:'Point Dume State Beach + headland hike',s:'Malibu · free · hidden cove below the headland · wildflowers in spring',dot:'teal',badge:'free'},
+      {t:'Lunch at Malibu Farm',s:'Malibu Pier · $$$ · farm-to-table · oceanfront · reserve ahead',dot:'gold'},
+      {t:'El Matador Beach at sunset',s:'Malibu · free · dramatic cliffs and sea stacks · best coastal scenery near LA',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Nobu Malibu brunch/lunch',meta:'Malibu · $$$$ · oceanfront · black cod with miso',rec:true},
+      {id:'s2',name:'Solstice Canyon hike',meta:'Malibu · free · waterfall + fire-consumed modernist ruins'},
+      {id:'s3',name:'Eaton Canyon Falls hike',meta:'Pasadena · free · beautiful riparian canyon'},
+      {id:'s4',name:'Gjusta Venice brunch',meta:'Venice · $$ · after a beach morning in Venice'},
+    ]},
+    '4':{name:'ultimate outdoor day',bud:'$$$$ special occasion',items:[
+      {t:'Sunrise hike in Griffith Park',s:'free · be there by 6am · empty trails, city views, the observatory glowing',dot:'teal',badge:'free'},
+      {t:'Brunch at Nobu Malibu',s:'22706 PCH · $$$$ · the most glamorous brunch in LA · reserve far ahead',dot:'gold'},
+      {t:'El Matador Beach after brunch',s:'free · dramatic Pacific coastline · 10 min from Nobu',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Point Dume State Beach hike',meta:'Malibu · free · hidden cove, wildflowers in spring',rec:true},
+      {id:'s2',name:'Descanso Gardens',meta:'La Cañada · $ · peaceful 150-acre botanical garden'},
+      {id:'s3',name:'Temescal Canyon hike',meta:'Pacific Palisades · free · waterfall + ocean views'},
+      {id:'s4',name:'Malibu Farm brunch',meta:'Malibu Pier · $$$ · farm-to-table, oceanfront'},
+    ]},
+  },
+  comedy:{
+    '1':{name:'comedy on a budget',bud:'$ under $30',items:[
+      {t:'Hollywood Farmers Market',s:'Ivar Ave · Sun 8am–1pm · free · 160+ vendors · great Sunday morning start',dot:'gold',badge:'free'},
+      {t:'La La Land Coffee',s:'Fountain Ave · $ · grab a spot before the show',dot:'teal'},
+      {t:'Groundlings Sunday Company matinee',s:'7307 Melrose Ave · $20–25 · Sun · proving ground for future SNL stars',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Jon & Vinny\'s dinner after',meta:'Fairfax · $$ · Italian · great post-show dinner',rec:true},
+      {id:'s2',name:'Canter\'s Deli late night',meta:'Fairfax · $ · open until 4am · LA institution since 1931'},
+      {id:'s3',name:'Bar Covell natural wine',meta:'Los Feliz · $$ · candlelit · great after a show'},
+      {id:'s4',name:'Short Stop bar',meta:'Echo Park · $ · dive bar · $4 PBR'},
+    ]},
+    '2':{name:'comedy night out',bud:'$$ $30–75',items:[
+      {t:'Dinner at Jon & Vinny\'s',s:'412 N Fairfax Ave · $$ · best casual Italian in LA · bar is walk-in',dot:'gold'},
+      {t:'Groundlings Main Company show',s:'7307 Melrose Ave · $30–45 · Fri/Sat · best comedy in LA · buy ahead',dot:'teal'},
+      {t:'Late drinks on Melrose or Cahuenga',s:'Canter\'s Deli until 4am, or nearby cocktail bar of choice',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Largo at the Coronet',meta:'WeHo · $$ · most beloved intimate venue in LA',rec:true},
+      {id:'s2',name:'Republique dinner before',meta:'Mid-City · $$$ · excellent pre-show dinner'},
+      {id:'s3',name:'Bar Covell after show',meta:'Los Feliz · $$ · candlelit natural wine bar'},
+      {id:'s4',name:'Musso & Frank before',meta:'Hollywood · $$$ · oldest restaurant in Hollywood'},
+    ]},
+    '3':{name:'comedy + great dinner',bud:'$$$ $75–150',items:[
+      {t:'Dinner at Republique',s:'624 S La Brea Ave · $$$ · one of LA\'s best · reserve ahead',dot:'gold'},
+      {t:'Groundlings Main Company show',s:'7307 Melrose Ave · $30–45 · Fri/Sat · the best show in the city',dot:'teal'},
+      {t:'Nightcap at a WeHo cocktail bar',s:'$15–20 drinks · close out the night right',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Largo at the Coronet',meta:'WeHo · $$ · Jon Brion Friday residency is legendary',rec:true},
+      {id:'s2',name:'Bestia dinner',meta:'Arts District · $$$ · one of the most celebrated in LA'},
+      {id:'s3',name:'Gracias Madre dinner',meta:'WeHo · $$ · plant-based Mexican, excellent margaritas'},
+      {id:'s4',name:'Bar Covell after show',meta:'Los Feliz · $$ · natural wine, walk-in'},
+    ]},
+    '4':{name:'comedy splurge night',bud:'$$$$ special occasion',items:[
+      {t:'Dinner at Bestia',s:'2036 E 7th St · $$$ · reserve 2–3 weeks · the celebration dinner',dot:'gold'},
+      {t:'Groundlings Main Company special event',s:'7307 Melrose Ave · $45+ · check for alumni appearances',dot:'teal'},
+      {t:'Late nightcap at a WeHo cocktail bar',s:'$15–25 drinks · close out a big night',dot:'teal'},
+    ],swaps:[
+      {id:'s1',name:'Republique dinner',meta:'Mid-City · $$$ · French-Californian, consistently excellent',rec:true},
+      {id:'s2',name:'Largo at the Coronet',meta:'WeHo · $$ · most intimate and beloved venue in LA'},
+      {id:'s3',name:'Mírate bar',meta:'Los Feliz · $$ · #12 North America · after the show'},
+      {id:'s4',name:'The Magic Castle',meta:'Hollywood · $$$$ · members or hotel guests only'},
+    ]},
+  },
+  local:{
+    '1':{name:'real LA, cheap',bud:'$ under $30',items:[
+      {t:'Echo Park circuit',s:'Cosa Buona pizza (2100 W Sunset) → El Moro churros → Echo Park Lake walk · all under $25',dot:'gold'},
+      {t:'El Moro Churrerìa',s:'3300 W Sunset · $ · fresh churros + chocolate sauce · eat outside by the lake',dot:'rose',badge:'dessert'},
+      {t:'Echo Park Lake golden hour walk',s:'free · very local, no tourists · rideshare recommended',dot:'teal',badge:'free'},
+    ],swaps:[
+      {id:'s1',name:'Silver Lake Farmers Market',meta:'Sat 8am · free · vintage, vinyl, very local',rec:true},
+      {id:'s2',name:'Short Stop bar',meta:'Echo Park · $ · the Dodgers bar, a true local institution'},
+      {id:'s3',name:'La La Land Coffee',meta:'Silver Lake · $ · rose latte, outdoor patio'},
+      {id:'s4',name:'Yuca\'s tacos',meta:'Los Feliz · $ · cash only · James Beard Award taco stand'},
+    ]},
+    '2':{name:'hidden LA gems',bud:'$$ $30–75',items:[
+      {t:'Silver Lake Farmers Market',s:'Sunset Triangle Plaza · Sat 8am–1:30pm · free · vintage, vinyl, Fungi Valley mushrooms',dot:'gold',badge:'free'},
+      {t:'La La Land Coffee + reservoir walk',s:'Fountain Ave · $ + free · what locals actually do on Saturdays',dot:'teal'},
+      {t:'Dinner at Cosa Buona',s:'2100 W Sunset · $ · best thin-crust in Echo Park · very local · rideshare rec',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Dinosaur Coffee',meta:'Silver Lake · $ · best cortado in the neighborhood',rec:true},
+      {id:'s2',name:'Bar Covell natural wine',meta:'Los Feliz · $$ · walk-in · best natural wine list in LA'},
+      {id:'s3',name:'Vandell bar',meta:'Los Feliz · $$ · new buzzy opening, walk-up crowd'},
+      {id:'s4',name:'Sqirl breakfast',meta:'Silver Lake · $$ · sorrel pesto rice bowl is iconic'},
+    ]},
+    '3':{name:'live like a local',bud:'$$$ $75–150',items:[
+      {t:'Griffith Observatory at sunset',s:'2800 E Observatory Rd · free · the best free view in LA · go before 7pm',dot:'teal',badge:'free'},
+      {t:'Mírate bar',s:'1735 N Hillhurst Ave, Los Feliz · $$ · #12 North America · Best Bar in the West',dot:'gold'},
+      {t:'Late dinner at Night + Market Song',s:'3322 W Sunset · $$ · most authentic Thai in LA · not for the spice-averse',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Vandell bar',meta:'Los Feliz · $$ · Old Fashioneds that make you a believer',rec:true},
+      {id:'s2',name:'Yuca\'s tacos',meta:'Los Feliz · $ · cash only · James Beard Award'},
+      {id:'s3',name:'Bar Covell natural wine',meta:'Los Feliz · $$ · candlelit, intimate, walk-in'},
+      {id:'s4',name:'Griffith Park trail hike',meta:'free · 50+ miles · after the observatory visit'},
+    ]},
+    '4':{name:'ultimate local LA day',bud:'$$$$ special occasion',items:[
+      {t:'Hauser & Wirth DTLA + Manuela lunch',s:'901 E 3rd St · free gallery · $30–40 lunch onsite · exceptional',dot:'teal'},
+      {t:'Greystone Mansion after lunch',s:'905 Loma Vista Dr, Beverly Hills · free · most Angelenos haven\'t been',dot:'purple',badge:'free add-on'},
+      {t:'Groundlings Main Company show',s:'7307 Melrose Ave · $35–45 · trained Wiig, Rudolph, Ferrell, McCarthy',dot:'gold'},
+    ],swaps:[
+      {id:'s1',name:'Dinner at Bestia after',meta:'Arts District · $$$ · the real LA special occasion dinner',rec:true},
+      {id:'s2',name:'Thunderbolt bar',meta:'Historic Filipinotown · $$ · #24 North America'},
+      {id:'s3',name:'Mírate bar',meta:'Los Feliz · $$ · #12 North America · Best Bar in the West'},
+      {id:'s4',name:'Watts Towers visit',meta:'Watts · free · one of the great outsider art works in the world'},
+    ]},
+  },
+};
+
+function buildPackage() {
+  const { vibe, budget } = byoState;
+  if(!vibe || !budget) return;
+  const pkg = PACKAGES[vibe]?.[budget];
+  if(!pkg) return;
+
+  [1,2,3].forEach(i=>{ const el=document.getElementById('byo-step-'+i); if(el)el.style.display='none'; });
+
+  const dotClass = d => ({ gold:'pkg-dot-gold', teal:'pkg-dot-teal', rose:'pkg-dot-rose', purple:'pkg-dot-purple' }[d]||'pkg-dot-gold');
+  const badgeHtml = b => {
+    if(!b) return '';
+    const cls = b==='free'?'badge-free':b==='dessert'?'badge-dessert':'badge-addon';
+    return `<span class="pkg-item-badge ${cls}">${b==='free add-on'?'free add-on':b}</span>`;
+  };
+
+  const items = pkg.items.map(item=>
+    `<div class="pkg-item">
+      <div class="pkg-dot ${dotClass(item.dot)}"></div>
+      <div>
+        <div class="pkg-item-main">${item.t}</div>
+        <div class="pkg-item-sub">${item.s}</div>
+        ${badgeHtml(item.badge)}
+      </div>
+    </div>`
+  ).join('');
+
+  const vibeLabels = {morning:'morning outing',date:'date night',dinner:'dinner and ___',friends:'friends night out',culture:'arts & culture',outdoor:'outdoor adventure',comedy:'comedy night',local:'local explorer'};
+
+  const result = document.getElementById('byo-result');
+  result.style.display = 'block';
+  result.innerHTML = `
+    <div class="pkg-card">
+      <div class="pkg-hdr">
+        <span class="pkg-hdr-name">${pkg.name}</span>
+        <span class="pkg-hdr-bud">${pkg.bud}</span>
+      </div>
+      <div class="pkg-body">${items}</div>
+      <div class="pkg-footer">
+        <button class="pkg-save" onclick="saveByo()">save this pairing</button>
+        <button class="pkg-restart" onclick="restartByo()">start over</button>
+      </div>
+    </div>
+    <div class="swap-section">
+      <div class="swap-hdr">want to swap one item?</div>
+      <div class="swap-sub-txt">here are a few alternatives that pair well with this</div>
+      <div class="swap-opts" id="swap-opts"></div>
+      <div class="swap-updated" id="swap-updated"></div>
+    </div>`;
+
+  renderSwapOpts(pkg.swaps);
+  result.scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+let selSwap = null;
+
+function renderSwapOpts(swaps) {
+  if(!swaps||!swaps.length) return;
+  const el = document.getElementById('swap-opts');
+  if(!el) return;
+  el.innerHTML = swaps.map(s=>{
+    const isSel = selSwap===s.id;
+    const cls = isSel?'swap-opt active':s.rec&&selSwap!==s.id?'swap-opt':'swap-opt';
+    const badge = s.rec&&!isSel ? `<span class="swap-rec">exacta pick</span>` : '';
+    return `<div class="${cls}" onclick="pickSwap('${s.id}','${s.name}','${s.meta}')">
+      <div class="swap-opt-name">${s.name}</div>
+      <div class="swap-opt-meta">${s.meta}</div>
+      ${badge}
+    </div>`;
+  }).join('');
+}
+
+function pickSwap(id, name, meta) {
+  selSwap = selSwap===id ? null : id;
+  const { vibe, budget } = byoState;
+  const pkg = PACKAGES[vibe]?.[budget];
+  if(pkg) renderSwapOpts(pkg.swaps);
+  const upd = document.getElementById('swap-updated');
+  if(!upd) return;
+  if(!selSwap) { upd.style.display='none'; return; }
+  upd.style.display = 'block';
+  upd.innerHTML = `
+    <div class="swap-updated-eye">updated pairing</div>
+    <div class="swap-updated-title">${pkg.name} · with ${name}</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:10px;">${meta}</div>
+    <div style="display:flex;gap:8px;">
+      <button class="swap-save" onclick="saveByo()">save this pairing</button>
+      <button class="swap-reset" onclick="pickSwap('${id}','${name}','${meta}')">undo swap</button>
+    </div>`;
+}
+
+// legacy wrapper — kept for any old refs
+function buildPackage() { generateByo(); }
+
+function saveByo() {
+  const { vibe, budgets } = byoState;
+  const b = budgets[0]||'1';
+  const pkg = PACKAGES[vibe]?.[b];
+  if(!pkg) return;
+  const id = 'byo_'+Date.now();
+  loved[id] = { title:pkg.name, hood:'paired.la · '+vibe, pair:pkg.bud };
+  document.getElementById('lc').textContent = Object.keys(loved).length;
+  const btn = document.querySelector('.pkg-save');
+  if(btn){ btn.textContent='saved!'; btn.style.background='#005A5A'; setTimeout(()=>{ btn.textContent='save this pairing'; btn.style.background=''; }, 1500); }
+}
+
+function restartByo() {
+  byoState = { vibe:null, interests:[], budgets:['1','2','3','4'] };
+  selSwap = null;
+  document.querySelectorAll('.vibe-card').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.int-pill').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.bud-card').forEach(c=>c.classList.add('active'));
+  document.getElementById('byo-result').style.display = 'none';
+  showStep(1);
 }
 </script>
 </body>
