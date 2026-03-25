@@ -1036,18 +1036,6 @@ function applyF() {
   if(activeTod!=='either') chips.push({label:'× '+activeTod+' only', fn:"setTod(document.getElementById('tod-either'),'either')"});
   document.getElementById('active-filters').innerHTML = chips.map(ch=>`<div class="af-chip" onclick="${ch.fn}">${ch.label}</div>`).join('');
 }
-  document.getElementById('no-res').classList.toggle('hidden', vis>0);
-  const dateLabel = {weekend:'this weekend',any:'all experiences',specific:selDate?new Date(selDate+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}):''};
-  const hoodPart = activeHood!=='all' ? ` · ${HOOD_LABELS[activeHood]}` : '';
-  const todPart = activeTod!=='either' ? ` · ${activeTod}` : '';
-  document.getElementById('res-title').textContent = (dateLabel[dateMode]||'experiences') + hoodPart + todPart;
-  document.getElementById('res-count').textContent = vis + ' experience' + (vis!==1?'s':'');
-  const chips = [];
-  if(activeHood!=='all') chips.push({label:'× '+HOOD_LABELS[activeHood], fn:'setHoodAll()'});
-  if(activeBgts.size < 4) chips.push({label:'× budget filter', fn:'setBgtAll()'});
-  if(activeTod!=='either') chips.push({label:'× '+activeTod+' only', fn:"setTod(document.getElementById('tod-either'),'either')"});
-  document.getElementById('active-filters').innerHTML = chips.map(ch=>`<div class="af-chip" onclick="${ch.fn}">${ch.label}</div>`).join('');
-}
 applyF();
 
 // ── VIEWS ──
